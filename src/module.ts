@@ -20,7 +20,7 @@ const handleResponse = async (body: unknown): Promise<unknown> => {
 export default abstract class Module {
   protected client: Client;
 
-  protected constructor(client: Client) {
+  public constructor(client: Client) {
     this.client = client;
   }
 

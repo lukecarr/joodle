@@ -1,5 +1,6 @@
 import { Client, ClientOptions } from "./client";
 import AuthModule from "./modules/auth";
+import WebServiceModule from "./modules/webservice";
 
 /**
  * The main Joodle client class. Used to make API calls to Moodle's Web Services
@@ -8,6 +9,7 @@ import AuthModule from "./modules/auth";
 // eslint-disable-next-line import/prefer-default-export
 export class Joodle extends Client {
   public auth: AuthModule;
+  public webService: WebServiceModule;
 
   /**
    * Initializes a new Joodle client instance for making API calls to Moodle's
@@ -17,5 +19,6 @@ export class Joodle extends Client {
   public constructor(options: ClientOptions) {
     super(options);
     this.auth = new AuthModule(this);
+    this.webService = new WebServiceModule(this);
   }
 }
