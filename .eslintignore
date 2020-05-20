@@ -1,0 +1,7 @@
+node_modules/**
+coverage/**
+dist/**
+*.md
+*.lock
+*.yml
+*.json

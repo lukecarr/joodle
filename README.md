@@ -20,8 +20,8 @@
 
 ## Key Features
 
-* Query Moodle's **[Web Services API](https://docs.moodle.org/dev/Web_services)**.
-* Comes with TypeScript typings!
+- Query Moodle's **[Web Services API](https://docs.moodle.org/dev/Web_services)**.
+- Comes with TypeScript typings!
 
 ## How To Use
 
@@ -30,7 +30,7 @@
 Simply add the library as a NPM dependency in your Node.js project.
 
 ```bash
-$ npm i joodle 
+$ npm i joodle
 ```
 
 You can always use Yarn if that's your kinda jam!
