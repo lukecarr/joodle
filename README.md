@@ -41,6 +41,62 @@ $ yarn add joodle
 
 ### Usage
 
+#### Initialization
+
+Initialise an instance of `Joodle` which is your client used for accessing Moodle's Web Services API.
+
+```js
+const { Joodle } = require("joodle");
+
+const joodle = new Joodle({
+  baseURL: "http://localhost",
+  token: "your token",
+});
+```
+
+The `baseURL` option should point to your Moodle website, and the `token` option is your Moodle Web Services token.
+
+**You should not store your token in your source code! Please use other means such as environment variables or loading from a file excluded from version control.**
+
+#### Modules
+
+Joodle is split up into modules to mimic the way that Moodle's Web Services API has functions grouped by [their area](https://docs.moodle.org/dev/Web_service_API_functions).
+
+All modules (and their web service functions) are accessible through your `Joodle` instance.
+
+For example: taking the first function listed on the aforementioned Moodle docs page.
+
+| Area       | Name                           |
+| :--------: | :----------------------------: |
+| auth_email | auth_email_get_signup_settings |
+
+The `auth_email` module would be accessible in joodle (`joodle.auth.email`) and contain a function (`getSignUpSettings()`) corresponding to the above function.
+
+Putting this all together, the above Moodle Web Services function corresponds to `joodle.auth.email.getSignUpSettings()` in joodle.
+
+#### Promise API
+
+All API calls in joodle return `Promises`, and resolve if a successful response is returned by Moodle, or reject if an error is encountered.
+
+You can also use the `async`/`await` syntax:
+
+```js
+const { Joodle } = require("joodle");
+
+const joodle = new Joodle(...);
+
+(async () => {
+  try {
+    const response = await joodle.auth.email.getSignUpSettings();
+    //=> Successful. Log response from Moodle...
+    console.log(response);
+  } catch (error) {
+    //=> Moodle threw an error!
+    console.error(error);
+  }
+})();
+```
+
 ## Contributing
 
 ### General Guidelines

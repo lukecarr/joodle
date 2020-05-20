@@ -1,3 +1,9 @@
+# 0.1.2 (2020-05-20)
+
+### Bug Fixes
+
+- changed from export default to export in main file ([60044e7](https://github.com/lukecarr/joodle/commit/60044e789d26f4d58172cbb50810f6ffde1178f4))
+
 # 0.1.1 (2020-05-20)
 
 ### Bug Fixes
