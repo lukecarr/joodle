@@ -25,7 +25,7 @@ export abstract class Client {
   /**
    * Initializes the client as well as the client's `got` instance so HTTP
    * requests can be made.
-   * 
+   *
    * @param options The client's configuration options.
    */
   public constructor(options: ClientOptions) {
