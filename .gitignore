@@ -1,0 +1,11 @@
+node_modules
+npm-debug.log*
+coverage
+*.tsbuildinfo
+.npm
+.eslintcache
+.node_repl_history
+.env
+tmp
+temp
+dist
