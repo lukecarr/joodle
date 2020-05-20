@@ -1,0 +1,18 @@
+version: 1
+update_configs:
+  - package_manager: "javascript"
+    directory: "/"
+    update_schedule: "daily"
+    target_branch: "master"
+    default_reviewers:
+      - "lukecarr"
+    allowed_updates:
+      - match:
+          dependency_type: "development"
+          update_type: "all"
+      - match:
+          dependency_type: "production"
+          update_type: "security"
+    commit_message:
+      prefix: "chore"
+      include_scope: true
