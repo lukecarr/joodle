@@ -1,11 +1,11 @@
-import Module from "../../module";
+import Module from "../";
 
 interface WebServiceFunction {
   /**
    * The name of the Web Services API function.
    */
   name: string;
-  
+
   /**
    * The function's version string.
    */
@@ -53,7 +53,7 @@ export interface SiteInfoResponse {
    * the API request.
    */
   fullname: string;
-  
+
   /**
    * The preferred language of the web service user
    * making the API request.

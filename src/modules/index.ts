@@ -1,4 +1,4 @@
-import { Client } from "./client";
+import { Client } from "../client";
 
 /**
  * Attempts to handle a JSON body returned by a call to Moodle's Web Services API.
