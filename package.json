@@ -1,6 +1,6 @@
 {
   "name": "joodle",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Moodle Web Service API client for Node.js.",
   "keywords": [
     "moodle",
@@ -20,6 +20,7 @@
   ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "typings": "dist/index",
   "files": [
     "dist/"
   ],
