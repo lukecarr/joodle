@@ -4,7 +4,7 @@ In this file you can find record of all authors that have contributed to this pr
 
 ## Project Technical Leads
 
-* **Luke Carr** - Creator - Exeter (England)
+- **Luke Carr** - Creator - Exeter (England)
 
 ## Developers
 

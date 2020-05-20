@@ -4,9 +4,9 @@
 
 The following table describes the versions of joodle that are currently supported with security updates.
 
-| Version |     Supported      |
-| :-----: | :----------------: |
-|         |                    |
+| Version | Supported |
+| :-----: | :-------: |
+|         |           |
 
 ## Responsible Disclosure Security Policy
 
