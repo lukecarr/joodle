@@ -1,11 +1,9 @@
 <h1 align="center">
-  <img src="https://i.imgur.com/pNsVYrn.png" alt="Omnio Cloud" width="400">
-  <br>
-  Repository Name
+  joodle
   <br>
 </h1>
 
-<h4 align="center">Add a brief description of the project here.</h4>
+<h4 align="center">Moodle Web Service API client for Node.js</h4>
 
 <p align="center">
   Add any badges/shields for the repository here.
@@ -13,49 +11,52 @@
 
 <p align="center">
   <strong>
-    <a href="#key-features">Add</a> •
-    <a href="#how-to-use">Links</a> •
-    <a href="#contributing">Here</a> •
+    <a href="#key-features">Key Features</a> •
+    <a href="#how-to-use">How to Use</a> •
+    <a href="#contributing">Contributing</a> •
     <a href="#credits">Credits</a>
   </strong>
 </p>
 
 ## Key Features
 
-* Add some key features here.
-* Don't go into too much detail.
-* Keep them short and sweet!
+* Query Moodle's **[Web Services API](https://docs.moodle.org/dev/Web_services)**.
+* Comes with TypeScript typings!
 
 ## How To Use
 
-Add installation/usage instructions here. Be sure to include any software requirements.
+### Installation
+
+Simply add the library as a NPM dependency in your Node.js project.
 
 ```bash
-# Maybe add a bash script here!
-$ do something
+$ npm i joodle 
 ```
+
+You can always use Yarn if that's your kinda jam!
+
+```bash
+$ yarn add joodle
+```
+
+### Usage
 
 ## Contributing
 
-If there are special instructions for how to add/change the code for this project, include them here.
-
 ### General Guidelines
 
-By contributing to this project, you agree to all of the general guidelines outlined in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+By contributing to this project, you agree to all of the general guidelines outlined in the **[CONTRIBUTING.md](CONTRIBUTING.md)** file.
 
 ### Code of Conduct
 
-We have a code of conduct outlined in the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) file which you are expected to adhere to at all times.
-
-### Testing
-
-Talk about the testing strategies/guidelines for this project here.
+We have a code of conduct outlined in the **[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)** file which you are expected to adhere to at all times.
 
 ## Credits
 
 This project uses the following open source packages:
 
-- [Some](#)
-- [Open](#)
-- [Source](#)
-- [Packages](#)
+- **[Node.js](https://nodejs.org)**
+- **[TypeScript](https://www.typescriptlang.org)**
+- **[got](https://github.com/sindresorhus/got)**
+- **[ESLint](https://eslint.org)**
+- **[Prettier](https://prettier.io)**
