@@ -9,6 +9,7 @@ import WebServiceModule from "./modules/webservice";
 // eslint-disable-next-line import/prefer-default-export
 export class Joodle extends Client {
   public auth: AuthModule;
+
   public webService: WebServiceModule;
 
   /**
