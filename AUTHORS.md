@@ -4,12 +4,12 @@ In this file you can find record of all authors that have contributed to this pr
 
 ## Project Technical Leads
 
-* **Name** - Title/Role - Location
+* **Luke Carr** - Creator - Exeter (England)
 
 ## Developers
 
-* **Name** - Title/Role - Location
+None as of yet!
 
 ## Miscellaneous Contributors
 
-List any miscellaneous contributors here.
+None as of yet!
