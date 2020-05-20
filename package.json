@@ -1,6 +1,6 @@
 {
   "name": "joodle",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Moodle Web Service API client for Node.js.",
   "keywords": [
     "moodle",
@@ -77,6 +77,7 @@
     "typescript": "^3.9.3"
   },
   "dependencies": {
+    "@babel/runtime": "^7.9.6",
     "got": "^11.1.4",
     "qs": "^6.9.4"
   },
