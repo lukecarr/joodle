@@ -60,13 +60,13 @@ The `baseURL` option should point to your Moodle website, and the `token` option
 
 #### Modules
 
-Joodle is split up into modules to mimic the way that Moodle's Web Services API has functions grouped by [their area](https://docs.moodle.org/dev/Web_service_API_functions).
+Joodle is split up into modules to mimic the way that Moodle's Web Services API has functions grouped by **[their area](https://docs.moodle.org/dev/Web_service_API_functions)**.
 
 All modules (and their web service functions) are accessible through your `Joodle` instance.
 
 For example: taking the first function listed on the aforementioned Moodle docs page.
 
-| Area       | Name                           |
+|    Area    |              Name              |
 | :--------: | :----------------------------: |
 | auth_email | auth_email_get_signup_settings |
 
@@ -114,5 +114,5 @@ This project uses the following open source packages:
 - **[Node.js](https://nodejs.org)**
 - **[TypeScript](https://www.typescriptlang.org)**
 - **[got](https://github.com/sindresorhus/got)**
-- **[ESLint](https://eslint.org)**
-- **[Prettier](https://prettier.io)**
+
+For a comprehensive list, see the **[package.json](package.json)** file's dependencies section.
