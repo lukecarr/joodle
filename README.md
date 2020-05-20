@@ -1,12 +1,18 @@
 <h1 align="center">
   joodle
-  <br>
 </h1>
 
 <h4 align="center">Moodle Web Service API client for Node.js</h4>
 
 <p align="center">
-  Add any badges/shields for the repository here.
+  <a href="LICENSE">
+    <img src="https://img.shields.io/github/license/lukecarr/joodle?color=4a00e0&style=for-the-badge" alt="License" />
+  </a>
+  <img src="https://img.shields.io/github/package-json/v/lukecarr/joodle/develop?label=Version&style=for-the-badge" alt="Version" />
+  <a href="https://github.com/omnio-interactive/omnio-learn/issues">
+    <img src="https://img.shields.io/github/issues/lukecarr/joodle?style=for-the-badge" alt="Issues Open" />
+  </a>
+  <img src="https://img.shields.io/osslifecycle/lukecarr/joodle?style=for-the-badge" alt="OSS Lifecycle" />
 </p>
 
 <p align="center">
@@ -21,7 +27,8 @@
 ## Key Features
 
 - Query Moodle's **[Web Services API](https://docs.moodle.org/dev/Web_services)**.
-- Comes with TypeScript typings!
+- Type definitions out of the box!
+- `Promise` based API.
 
 ## How To Use
 
