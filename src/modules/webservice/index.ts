@@ -1,4 +1,4 @@
-import Module from "../";
+import Module from "..";
 
 interface WebServiceFunction {
   /**

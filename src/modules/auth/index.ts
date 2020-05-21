@@ -1,4 +1,4 @@
-import Module from "../";
+import Module from "..";
 import AuthEmailModule from "./email";
 import { Client } from "../../client";
 
