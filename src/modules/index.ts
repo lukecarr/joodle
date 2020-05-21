@@ -8,7 +8,9 @@ import FunctionResponse from "../functions/response";
  *
  * @param body A JSON body returned by a Moodle API call.
  */
-const handleResponse = async (response: FunctionResponse): Promise<FunctionResponse> => {
+const handleResponse = async (
+  response: FunctionResponse
+): Promise<FunctionResponse> => {
   if ((response as any).exception) {
     return Promise.reject(response);
   }
@@ -45,7 +47,7 @@ export default abstract class Module {
 
     return handleResponse({
       getHttpResponse: () => response,
-      ...(response.body as any)
+      ...(response.body as any),
     });
   }
 }
