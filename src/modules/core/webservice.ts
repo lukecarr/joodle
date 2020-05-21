@@ -1,5 +1,5 @@
 import Module from "..";
-import FunctionResponse from "../../functions/response";
+import { FunctionResponse } from "../../functions";
 
 interface WebServiceFunction {
   /**
