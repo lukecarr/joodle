@@ -12,6 +12,10 @@ import {
 } from "./get-course-user-profiles";
 import { GetPrivateFilesInfoResponse } from "./get-private-files-info";
 import { GetUserPreferencesResponse } from "./get-user-preferences";
+import {
+  NewPreference,
+  SetUserPreferencesResponse,
+} from "./set-user-preferences";
 import { SearchCriteria, GetUsersResponse } from "./get-users";
 import { GetUsersByFieldResponse } from "./get-users-by-field";
 
@@ -122,6 +126,19 @@ export default class UserModule extends Module {
       name,
       userid: user === undefined ? 0 : user,
     })) as GetUserPreferencesResponse;
+  }
+
+  /**
+   * Sets user preferences for Moodle users.
+   *
+   * @param preferences The preferences to set.
+   */
+  public async setUserPreferences(
+    ...preferences: NewPreference[]
+  ): Promise<SetUserPreferencesResponse> {
+    return (await this.get("core_user_set_user_preferences", {
+      preferences,
+    })) as SetUserPreferencesResponse;
   }
 
   /**
