@@ -41,7 +41,7 @@ export default abstract class Module {
     const response = await this.client.got.get("webservice/rest/server.php", {
       searchParams: qs.stringify({
         wsfunction,
-        ...searchParams
+        ...searchParams,
       }),
       responseType: "json",
     });

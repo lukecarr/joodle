@@ -29,7 +29,7 @@
     "url": "git+https://github.com/lukecarr/joodle.git"
   },
   "scripts": {
-    "dev": "ts-node src/index.ts",
+    "dev": "ts-node src/sandbox.ts",
     "lint:eslint": "eslint \"src/**\" --fix",
     "lint:prettier": "prettier --write *.md *.json **/*.yml",
     "lint": "npm-run-all lint:*",
