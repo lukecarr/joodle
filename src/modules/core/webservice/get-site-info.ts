@@ -1,5 +1,4 @@
-import Module from "..";
-import { FunctionResponse } from "../../functions";
+import { FunctionResponse } from "../../../functions";
 
 interface WebServiceFunction {
   /**
@@ -181,20 +180,4 @@ export interface SiteInfoResponse extends FunctionResponse {
    * installed on the site.
    */
   theme: string;
-}
-
-/**
- * Functions relating to system actions.
- */
-export default class WebServiceModule extends Module {
-  /**
-   * Returns information about the Moodle site and the Web Services API.
-   * This function's response also contains information relating to the
-   * web service user, such as capabilities and authorized API actions.
-   */
-  public async getSiteInfo(): Promise<SiteInfoResponse> {
-    return (await this.get(
-      "core_webservice_get_site_info"
-    )) as SiteInfoResponse;
-  }
 }

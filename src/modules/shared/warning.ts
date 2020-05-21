@@ -1,4 +1,4 @@
-export default interface Warning {
+export interface Warning {
   /**
    * @todo Add documentation. Moodle's
    * documentation does not provide an

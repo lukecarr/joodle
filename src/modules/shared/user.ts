@@ -33,7 +33,7 @@ interface Preference {
   value: string;
 }
 
-export default interface User {
+export interface User {
   /**
    * The unique identifier of the user.
    */
