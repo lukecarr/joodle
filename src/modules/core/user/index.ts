@@ -10,9 +10,10 @@ import {
   CourseUser,
   GetCourseUserProfilesResponse,
 } from "./get-course-user-profiles";
+import { GetPrivateFilesInfoResponse } from "./get-private-files-info";
+import { GetUserPreferencesResponse } from "./get-user-preferences";
 import { SearchCriteria, GetUsersResponse } from "./get-users";
 import { GetUsersByFieldResponse } from "./get-users-by-field";
-import { GetPrivateFilesInfoResponse } from "./get-private-files-info";
 
 /**
  * Functions for user-related actions.
@@ -101,6 +102,26 @@ export default class UserModule extends Module {
     return (await this.get("core_user_get_private_files_info", {
       userid: user === undefined ? 0 : user,
     })) as GetPrivateFilesInfoResponse;
+  }
+
+  /**
+   * Returns user preferences for a Moodle user.
+   *
+   * @param name The name of the preference to
+   * lookup. If no name is provided, all
+   * preferences are returned.
+   * @param user The ID of the user to lookup
+   * preferences for. If no ID is provided, the
+   * ID Of the web service user is used.
+   */
+  public async getUserPreferences(
+    name?: string,
+    user?: number
+  ): Promise<GetUserPreferencesResponse> {
+    return (await this.get("core_user_get_user_preferences", {
+      name,
+      userid: user === undefined ? 0 : user,
+    })) as GetUserPreferencesResponse;
   }
 
   /**
