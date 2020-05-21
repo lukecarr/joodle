@@ -9,3 +9,4 @@ coverage
 tmp
 temp
 dist
+src/sandbox.ts
