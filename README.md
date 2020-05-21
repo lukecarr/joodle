@@ -85,6 +85,20 @@ Putting this all together, the above Moodle Web Services function corresponds to
 
 All API calls in joodle return `Promises`, and resolve if a successful response is returned by Moodle, or reject if an error is encountered.
 
+```js
+const { Joodle } = require("joodle");
+
+const joodle = new Joodle(...);
+
+joodle.auth.email.getSignUpSettings().then((response) => {
+  //=> Successful. Log response from Moodle...
+  console.log(response);
+}).catch((error) => {
+  //=> Moodle threw an error!
+  console.error(error);
+});
+```
+
 You can also use the `async`/`await` syntax:
 
 ```js
@@ -109,14 +123,10 @@ const joodle = new Joodle(...);
 Every function call response contains a `getHttpResponse()` method that allows you to access the raw HTTP response that was returned by Moodle's Web Services API.
 
 ```js
-...
-
 joodle.auth.email.getSignUpSettings().then((response) => {
   //=> Successful. Log raw HTTP response from Moodle...
   console.log(response.getHttpResponse());
 });
-
-...
 ```
 
 ## Contributing
