@@ -39,6 +39,39 @@ describe("The Joodle client class", () => {
     expect(joodle.got.defaults.options.searchParams!.get("moodlewsrestformat")).toBe("json");
   });
 
+  it("should allow initialization through environment variables", () => {
+    process.env["JOODLE_BASE_URL"] = "http://localhost";
+    process.env["JOODLE_TOKEN"] = "abc123";
+
+    expect(() => new Joodle()).not.toThrowError();
+
+    delete process.env["JOODLE_BASE_URL"];
+    delete process.env["JOODLE_TOKEN"];
+  });
+
+  it("should prioritize provided options over environment variables", () => {
+    process.env["JOODLE_BASE_URL"] = "http://localhost/";
+    process.env["JOODLE_TOKEN"] = "abc123";
+
+    const baseURL = "https://moodle.example.com/";
+    const joodle = new Joodle({
+      baseURL,
+    });
+
+    expect(joodle.got.defaults.options.prefixUrl).toBe(baseURL);
+
+    delete process.env["JOODLE_BASE_URL"];
+    delete process.env["JOODLE_TOKEN"];
+  }) 
+
+  it("should throw an error if the baseURL is not provided", () => {
+    expect(() => new Joodle({ baseURL })).toThrowError();
+  });
+
+  it("should throw an error if the token is not provided", () => {
+    expect(() => new Joodle({ token })).toThrowError();
+  });
+
   it("should make API calls using the got library", () => {
     return expect(joodle.auth.email.getSignUpSettings()).resolves.toBeDefined();
   });
