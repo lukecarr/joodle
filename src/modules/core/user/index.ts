@@ -48,6 +48,17 @@ export default class UserModule extends Module {
   }
 
   /**
+   * Deletes users from the Moodle site.
+   *
+   * @param users The IDs of the users to delete.
+   */
+  public async deleteUsers(...users: number[]): Promise<FunctionResponse> {
+    return (await this.get("core_user_delete_users", {
+      userids: users,
+    })) as FunctionResponse;
+  }
+
+  /**
    * Searches for users on the Moodle site that match
    * the provided crtieria.
    */
