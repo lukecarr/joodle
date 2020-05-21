@@ -27,7 +27,7 @@ export default class UserModule extends Module {
    * @param values The value to search users' fields for.
    */
   public async getUsersByField(
-    field: string,
+    field: "id" | "idnumber" | "username" | "email",
     ...values: (string | number)[]
   ): Promise<GetUsersByFieldResponse> {
     const response = (await this.get("core_user_get_users_by_field", {

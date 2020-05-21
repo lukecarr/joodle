@@ -6,7 +6,14 @@ export interface SearchCriteria {
    * The name of the field used to search
    * for users.
    */
-  key: string;
+  key:
+    | "id"
+    | "lastname"
+    | "firstname"
+    | "idnumber"
+    | "username"
+    | "email"
+    | "auth";
 
   /**
    * The field value to match when searching
