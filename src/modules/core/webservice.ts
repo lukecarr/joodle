@@ -1,4 +1,5 @@
 import Module from "..";
+import FunctionResponse from "../../functions/response";
 
 interface WebServiceFunction {
   /**
@@ -24,7 +25,7 @@ interface AdvancedFeature {
   value: 1 | 0;
 }
 
-export interface SiteInfoResponse {
+export interface SiteInfoResponse extends FunctionResponse {
   /**
    * The Moodle site's display name.
    */

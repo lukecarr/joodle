@@ -1,6 +1,7 @@
 import Module from "..";
+import FunctionResponse from "../../functions/response";
 
-export interface SignUpSettingsResponse {
+export interface SignUpSettingsResponse extends FunctionResponse {
   /**
    * The fields that a user can provide during sign up to identify their name.
    */
