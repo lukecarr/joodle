@@ -1,5 +1,6 @@
 import Module from "..";
 import FunctionResponse from "../../functions/response";
+import Warning from "../shared/warning";
 
 export interface SignUpSettingsResponse extends FunctionResponse {
   /**
@@ -12,7 +13,7 @@ export interface SignUpSettingsResponse extends FunctionResponse {
    */
   passwordpolicy: string;
 
-  warnings: unknown[];
+  warnings?: Warning[];
 }
 
 /**
