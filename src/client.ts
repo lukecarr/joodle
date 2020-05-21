@@ -33,7 +33,7 @@ export abstract class Client {
     this.token = options.token;
 
     this.got = got.extend({
-      prefixUrl: `${this.baseURL}/webservice/rest/server.php`,
+      prefixUrl: this.baseURL,
       searchParams: {
         wstoken: this.token,
         moodlewsrestformat: "json",

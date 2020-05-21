@@ -34,7 +34,7 @@ export default abstract class Module {
     wsfunction: string,
     searchParams?: any
   ): Promise<unknown> {
-    const { body } = await this.client.got.get("", {
+    const { body } = await this.client.got.get("webservice/rest/server.php", {
       searchParams: {
         wsfunction,
         ...searchParams,
