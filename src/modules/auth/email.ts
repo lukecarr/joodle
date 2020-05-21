@@ -90,7 +90,7 @@ interface ProfileField {
 
   /**
    * The field's default data format code.
-   * 
+   *
    * `0` - Moodle
    * `1` - HTML
    * `2` - plain text
