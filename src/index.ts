@@ -15,10 +15,12 @@ export class Joodle extends Client {
   /**
    * Initializes a new Joodle client instance for making API calls to Moodle's
    * Web Services API.
+   *
    * @param options The client's configuration options.
    */
-  public constructor(options: ClientOptions) {
+  public constructor(options?: ClientOptions) {
     super(options);
+
     this.auth = new AuthModule(this);
     this.core = new CoreModule(this);
   }
