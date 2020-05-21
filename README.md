@@ -18,7 +18,8 @@
 <p align="center">
   <strong>
     <a href="#key-features">Key Features</a> •
-    <a href="#how-to-use">How to Use</a> •
+    <a href="#installation">Installation</a> •
+    <a href="#usage">Usage</a> •
     <a href="#contributing">Contributing</a> •
     <a href="#credits">Credits</a>
   </strong>
@@ -30,9 +31,7 @@
 - Type definitions out of the box!
 - `Promise` based API.
 
-## How To Use
-
-### Installation
+## Installation
 
 Simply add the library as a NPM dependency in your Node.js project.
 
@@ -46,9 +45,9 @@ You can always use Yarn if that's your kinda jam!
 $ yarn add joodle
 ```
 
-### Usage
+## Usage
 
-#### Initialization
+### Initialization
 
 Initialise an instance of `Joodle` which is your client used for accessing Moodle's Web Services API.
 
@@ -65,7 +64,7 @@ The `baseURL` option should point to your Moodle website, and the `token` option
 
 **You should not store your token in your source code! Please use other means such as [environment variables](#environment-variables) or loading from a file excluded from version control.**
 
-#### Modules
+### Modules
 
 Joodle is split up into modules to mimic the way that Moodle's Web Services API has functions grouped by **[their area](https://docs.moodle.org/dev/Web_service_API_functions)**.
 
@@ -81,7 +80,7 @@ The `auth_email` module would be accessible in joodle (`joodle.auth.email`) and 
 
 Putting this all together, the above Moodle Web Services function corresponds to `joodle.auth.email.getSignUpSettings()` in joodle.
 
-#### Promise API
+### Promise API
 
 All API calls in joodle return `Promises`, and resolve if a successful response is returned by Moodle, or reject if an error is encountered.
 
@@ -118,7 +117,7 @@ const joodle = new Joodle(...);
 })();
 ```
 
-#### Raw HTTP Responses
+### Raw HTTP Responses
 
 Every function call response contains a `getHttpResponse()` method that allows you to access the raw HTTP response that was returned by Moodle's Web Services API.
 
@@ -129,7 +128,7 @@ joodle.auth.email.getSignUpSettings().then((response) => {
 });
 ```
 
-#### Environment Variables
+### Environment Variables
 
 You can use environment varaibles instead of providing an options object when initializing the `Joodle` client.
 
