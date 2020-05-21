@@ -14,6 +14,7 @@ describe("The Joodle client class", () => {
 
     nock(baseURL)
       .get(`/webservice/rest/server.php?wsfunction=auth_email_get_signup_settings&wstoken=${token}&moodlewsrestformat=json`)
+      .twice()
       .reply(200, {
         namefields: [
           "firstname",
@@ -44,5 +45,9 @@ describe("The Joodle client class", () => {
 
   it("should catch errors returned by Moodle", () => {
     return expect(joodle.core.webservice.getSiteInfo()).rejects.toBeDefined();
+  });
+
+  it("should expose the raw HTTP response through the getHttpResponse() function", () => {
+    return joodle.auth.email.getSignUpSettings().then((response) => expect(response.getHttpResponse()).toBeDefined());
   });
 });

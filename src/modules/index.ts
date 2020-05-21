@@ -1,4 +1,5 @@
 import { Client } from "../client";
+import FunctionResponse from "../functions/response";
 
 /**
  * Attempts to handle a JSON body returned by a call to Moodle's Web Services API.
@@ -7,11 +8,11 @@ import { Client } from "../client";
  *
  * @param body A JSON body returned by a Moodle API call.
  */
-const handleResponse = async (body: unknown): Promise<unknown> => {
-  if ((body as any).exception) {
-    return Promise.reject(body);
+const handleResponse = async (response: FunctionResponse): Promise<FunctionResponse> => {
+  if ((response as any).exception) {
+    return Promise.reject(response);
   }
-  return body;
+  return response;
 };
 
 /**
@@ -33,8 +34,8 @@ export default abstract class Module {
   protected async get(
     wsfunction: string,
     searchParams?: any
-  ): Promise<unknown> {
-    const { body } = await this.client.got.get("webservice/rest/server.php", {
+  ): Promise<FunctionResponse> {
+    const response = await this.client.got.get("webservice/rest/server.php", {
       searchParams: {
         wsfunction,
         ...searchParams,
@@ -42,6 +43,9 @@ export default abstract class Module {
       responseType: "json",
     });
 
-    return handleResponse(body);
+    return handleResponse({
+      getHttpResponse: () => response,
+      ...(response.body as any)
+    });
   }
 }
