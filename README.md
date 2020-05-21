@@ -104,6 +104,21 @@ const joodle = new Joodle(...);
 })();
 ```
 
+#### Raw HTTP Responses
+
+Every function call response contains a `getHttpResponse()` method that allows you to access the raw HTTP response that was returned by Moodle's Web Services API.
+
+```js
+...
+
+joodle.auth.email.getSignUpSettings().then((response) => {
+  //=> Successful. Log raw HTTP response from Moodle...
+  console.log(response.getHttpResponse());
+});
+
+...
+```
+
 ## Contributing
 
 ### General Guidelines
