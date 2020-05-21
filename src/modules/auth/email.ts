@@ -1,6 +1,6 @@
 import Module from "..";
 import FunctionResponse from "../../functions/response";
-import Warning from "../shared/warning";
+import { Warning } from "../shared";
 
 export interface SignUpSettingsResponse extends FunctionResponse {
   /**
