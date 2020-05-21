@@ -1,6 +1,5 @@
-import Module from "..";
-import { FunctionResponse } from "../../functions";
-import { Warning } from "../shared";
+import { FunctionResponse } from "../../../functions";
+import { Warning } from "../../shared";
 
 interface ProfileField {
   /**
@@ -190,20 +189,4 @@ export interface SignUpSettingsResponse extends FunctionResponse {
   recaptchachallengejs?: string;
 
   warnings?: Warning[];
-}
-
-/**
- * Functions relating to Moodle's email-based self-registration.
- *
- * This module's function calls may throw errors if self registration is disabled.
- */
-export default class AuthEmailModule extends Module {
-  /**
-   * Get the sign-up required settings and profile fields.
-   */
-  public async getSignUpSettings(): Promise<SignUpSettingsResponse> {
-    return (await this.get(
-      "auth_email_get_signup_settings"
-    )) as SignUpSettingsResponse;
-  }
 }
