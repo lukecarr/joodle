@@ -4,12 +4,19 @@ import { Joodle } from "../src";
 describe("The Joodle client class", () => {
   const baseURL = "https://moodle.example.com/";
   const token = "abc123";
+  const timeout = 5000;
+  const retries = 5;
+  const rejectInvalidSSL = false;
   let joodle: Joodle;
 
   beforeAll(() => {
     joodle = new Joodle({
       baseURL,
       token,
+    }, {
+      timeout,
+      retries,
+      rejectInvalidSSL,
     });
 
     nock(baseURL)
@@ -62,7 +69,13 @@ describe("The Joodle client class", () => {
 
     delete process.env["JOODLE_BASE_URL"];
     delete process.env["JOODLE_TOKEN"];
-  }) 
+  });
+
+  it("should allow HTTP options to be provided as a second constructor parameter", () => {
+    expect(joodle.got.defaults.options.timeout.request).toBe(timeout);
+    expect(joodle.got.defaults.options.retry.limit).toBe(retries);
+    expect(joodle.got.defaults.options.rejectUnauthorized).toBe(rejectInvalidSSL);
+  });
 
   it("should throw an error if the baseURL is not provided", () => {
     expect(() => new Joodle({ baseURL })).toThrowError();
