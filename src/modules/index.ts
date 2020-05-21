@@ -1,3 +1,4 @@
+import qs from "qs";
 import { Client } from "../client";
 import FunctionResponse from "../functions/response";
 
@@ -38,10 +39,10 @@ export default abstract class Module {
     searchParams?: any
   ): Promise<FunctionResponse> {
     const response = await this.client.got.get("webservice/rest/server.php", {
-      searchParams: {
+      searchParams: qs.stringify({
         wsfunction,
-        ...searchParams,
-      },
+        ...searchParams
+      }),
       responseType: "json",
     });
 
