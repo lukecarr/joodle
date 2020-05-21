@@ -151,14 +151,14 @@ const joodle = new Joodle(
     /**
      * The duration in milliseconds that the client should wait for a response
      * before aborting the request.
-     * 
+     *
      * By default, there is no response timeout duration.
      */
     timeout: 5000, // Timeout after 5 seconds (5000 milliseconds)
 
     /**
      * How many retries should the client attempt to make on failure.
-     * 
+     *
      * By default, the client will attempt 2 retries if the first request fails.
      */
     retries: 2, // A function call will giv eup after 2 failed retries
@@ -166,7 +166,7 @@ const joodle = new Joodle(
     /**
      * Whether the client should reject invalid SSL certificates (true) or not
      * (false).
-     * 
+     *
      * By default, the client will reject invalid SSL certificates. This option
      * has security implications if set to true, and we only recommend you do
      * so when connecting to a local Moodle instance.

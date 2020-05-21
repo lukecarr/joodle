@@ -80,8 +80,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.9.6",
-    "got": "^11.1.4",
-    "qs": "^6.9.4"
+    "got": "^11.1.4"
   },
   "config": {
     "commitizen": {
