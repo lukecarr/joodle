@@ -20,14 +20,14 @@ export interface HttpOptions {
   /**
    * The duration in milliseconds that the client should wait for a response
    * before aborting the request.
-   * 
+   *
    * By default, there is no response timeout duration.
    */
   timeout?: number;
 
   /**
    * How many retries should the client attempt to make on failure.
-   * 
+   *
    * By default, the client will attempt 2 retries if the first request fails.
    */
   retries?: number;
@@ -35,7 +35,7 @@ export interface HttpOptions {
   /**
    * Whether the client should reject invalid SSL certificates (true) or not
    * (false).
-   * 
+   *
    * By default, the client will reject invalid SSL certificates. This option
    * has security implications if set to true, and we only recommend you do
    * so when connecting to a local Moodle instance.
@@ -79,7 +79,10 @@ export abstract class Client {
       // HTTP Options
       timeout: (httpOptions && httpOptions.timeout) || undefined,
       retry: (httpOptions && httpOptions.retries) || 2,
-      rejectUnauthorized: httpOptions && httpOptions.rejectInvalidSSL !== undefined ? httpOptions.rejectInvalidSSL : true,
+      rejectUnauthorized:
+        httpOptions && httpOptions.rejectInvalidSSL !== undefined
+          ? httpOptions.rejectInvalidSSL
+          : true,
     });
   }
 }
