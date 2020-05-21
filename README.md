@@ -49,7 +49,7 @@ $ yarn add joodle
 
 ### Initialization
 
-Initialise an instance of `Joodle` which is your client used for accessing Moodle's Web Services API.
+Initialize an instance of `Joodle` which is your client used for accessing Moodle's Web Services API.
 
 ```js
 const { Joodle } = require("joodle");
