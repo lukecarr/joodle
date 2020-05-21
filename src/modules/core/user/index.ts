@@ -18,6 +18,7 @@ import {
 } from "./set-user-preferences";
 import { SearchCriteria, GetUsersResponse } from "./get-users";
 import { GetUsersByFieldResponse } from "./get-users-by-field";
+import { UserPictureResponse } from "./user-picture";
 
 /**
  * Functions for user-related actions.
@@ -116,7 +117,7 @@ export default class UserModule extends Module {
    * preferences are returned.
    * @param user The ID of the user to lookup
    * preferences for. If no ID is provided, the
-   * ID Of the web service user is used.
+   * ID of the web service user is used.
    */
   public async getUserPreferences(
     name?: string,
@@ -179,5 +180,39 @@ export default class UserModule extends Module {
     );
 
     return users;
+  }
+
+  /**
+   * Updates a user's profile picture.
+   *
+   * @param draftItemId The ID of the draft file to
+   * use as the picture.
+   * @param user The ID of the user to update the
+   * picture of. If no ID is provided, the ID of
+   * the web service user is used.
+   */
+  public async updateUserPicture(
+    draftItemId: number,
+    user?: number
+  ): Promise<UserPictureResponse> {
+    return (await this.get("core_user_update_picture", {
+      draftitemid: draftItemId,
+      userid: user === undefined ? 0 : user,
+    })) as UserPictureResponse;
+  }
+
+  /**
+   * Deletes a user's profile picture.
+   *
+   * @param user The ID of the user to delete the
+   * picture of. If no ID is provided, the ID of
+   * the web service user is used.
+   */
+  public async deleteUserPicture(user?: number): Promise<UserPictureResponse> {
+    return (await this.get("core_user_update_picture", {
+      draftitemid: 0,
+      delete: 1,
+      userid: user === undefined ? 0 : user,
+    })) as UserPictureResponse;
   }
 }
