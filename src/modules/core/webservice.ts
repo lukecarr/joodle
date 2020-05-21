@@ -85,8 +85,16 @@ export interface SiteInfoResponse extends FunctionResponse {
    */
   functions: WebServiceFunction[];
 
+  /**
+   * Whether the user is allowed to download files
+   * (1) or not (0).
+   */
   downloadfiles: number;
 
+  /**
+   * Whether the user is allowed to upload files (1)
+   * or not (0).
+   */
   uploadfiles: number;
 
   /**
@@ -101,6 +109,9 @@ export interface SiteInfoResponse extends FunctionResponse {
    */
   version: string;
 
+  /**
+   * The URL of the Moodle site's mobile CSS theme.
+   */
   mobilecssurl: string;
 
   /**
@@ -109,16 +120,41 @@ export interface SiteInfoResponse extends FunctionResponse {
    */
   advancedfeatures: AdvancedFeature[];
 
+  /**
+   * Whether the user can manage their own files
+   * (true) or not (false).
+   */
   usercanmanageownfiles: boolean;
 
+  /**
+   * User quota in bytes. A value of 0 means the
+   * user can ignore the quota.
+   */
   userquota: number;
 
+  /**
+   * The maximum file size (in bytes) that the
+   * user is permitted to upload. A value of -1
+   * means the user can upload files of any size.
+   */
   usermaxuploadfilesize: number;
 
+  /**
+   * The user's default homepage. A value of 0
+   * represents the site's homepage, and 1
+   * represents the dashboard page.
+   */
   userhomepage: number;
 
+  /**
+   * The user's private access key used for
+   * fetching files from Moodle.
+   */
   userprivateaccesskey: string;
 
+  /**
+   * The site's course ID.
+   */
   siteid: number;
 
   /**
