@@ -1,5 +1,6 @@
 import Module from "../..";
 import { FunctionResponse } from "../../../functions";
+import { SitePolicyAgreementResponse } from "./agree-site-policy";
 import { SearchCriteria, GetUsersResponse } from "./get-users";
 import { GetUsersByFieldResponse } from "./get-users-by-field";
 
@@ -7,6 +8,16 @@ import { GetUsersByFieldResponse } from "./get-users-by-field";
  * Functions for user-related actions.
  */
 export default class UserModule extends Module {
+  /**
+   * Agrees to the Moodle site policy for the current
+   * web service user.
+   */
+  public async agreeSitePolicy(): Promise<SitePolicyAgreementResponse> {
+    return (await this.get(
+      "core_user_agree_site_policy"
+    )) as SitePolicyAgreementResponse;
+  }
+
   /**
    * Searches for users on the Moodle site that match
    * the provided crtieria.
