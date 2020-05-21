@@ -63,7 +63,7 @@ const joodle = new Joodle({
 
 The `baseURL` option should point to your Moodle website, and the `token` option is your Moodle Web Services token.
 
-**You should not store your token in your source code! Please use other means such as environment variables or loading from a file excluded from version control.**
+**You should not store your token in your source code! Please use other means such as [environment variables](#environment-variables) or loading from a file excluded from version control.**
 
 #### Modules
 
@@ -128,6 +128,14 @@ joodle.auth.email.getSignUpSettings().then((response) => {
   console.log(response.getHttpResponse());
 });
 ```
+
+#### Environment Variables
+
+You can use environment varaibles instead of providing an options object when initializing the `Joodle` client.
+
+Setting the `JOODLE_BASE_URL` environment variable will emulate the `baseURL` client option, and `JOODLE_TOKEN` emulates the `token` option.
+
+Configuration options provided to the client constructor take priority over (override) any environment variables declared.
 
 ## Contributing
 
