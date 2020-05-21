@@ -16,6 +16,33 @@ export interface ClientOptions {
   token?: string;
 }
 
+export interface HttpOptions {
+  /**
+   * The duration in milliseconds that the client should wait for a response
+   * before aborting the request.
+   * 
+   * By default, there is no response timeout duration.
+   */
+  timeout?: number;
+
+  /**
+   * How many retries should the client attempt to make on failure.
+   * 
+   * By default, the client will attempt 2 retries if the first request fails.
+   */
+  retries?: number;
+
+  /**
+   * Whether the client should reject invalid SSL certificates (true) or not
+   * (false).
+   * 
+   * By default, the client will reject invalid SSL certificates. This option
+   * has security implications if set to true, and we only recommend you do
+   * so when connecting to a local Moodle instance.
+   */
+  rejectInvalidSSL?: boolean;
+}
+
 /**
  * A client that can send HTTP requests to a Moodle site's Web Services API.
  */
@@ -30,9 +57,10 @@ export abstract class Client {
    * Initializes the client as well as the client's `got` instance so HTTP
    * requests can be made.
    *
-   * @param options The client's configuration options.
+   * @param options     The client's configuration options.
+   * @param httpOptions HTTP configuration options to pass along to `got`.
    */
-  public constructor(options?: ClientOptions) {
+  public constructor(options?: ClientOptions, httpOptions?: HttpOptions) {
     this.baseURL = (options && options.baseURL) || process.env.JOODLE_BASE_URL;
     this.token = (options && options.token) || process.env.JOODLE_TOKEN;
 
@@ -48,6 +76,10 @@ export abstract class Client {
         wstoken: this.token,
         moodlewsrestformat: "json",
       },
+      // HTTP Options
+      timeout: (httpOptions && httpOptions.timeout) || undefined,
+      retry: (httpOptions && httpOptions.retries) || 2,
+      rejectUnauthorized: httpOptions && httpOptions.rejectInvalidSSL !== undefined ? httpOptions.rejectInvalidSSL : true,
     });
   }
 }

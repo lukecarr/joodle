@@ -136,6 +136,46 @@ Setting the `JOODLE_BASE_URL` environment variable will emulate the `baseURL` cl
 
 Configuration options provided to the client constructor take priority over (override) any environment variables declared.
 
+### HTTP Configuration
+
+Several HTTP configuration options from **got** (the HTTP library Joodle uses) are exposed so you can configure them to your liking.
+
+You can provide HTTP options as a second parameter when initializing the `Joodle` client.
+
+```js
+const joodle = new Joodle(
+  {
+    ...
+  },
+  {
+    /**
+     * The duration in milliseconds that the client should wait for a response
+     * before aborting the request.
+     * 
+     * By default, there is no response timeout duration.
+     */
+    timeout: 5000, // Timeout after 5 seconds (5000 milliseconds)
+
+    /**
+     * How many retries should the client attempt to make on failure.
+     * 
+     * By default, the client will attempt 2 retries if the first request fails.
+     */
+    retries: 2, // A function call will giv eup after 2 failed retries
+
+    /**
+     * Whether the client should reject invalid SSL certificates (true) or not
+     * (false).
+     * 
+     * By default, the client will reject invalid SSL certificates. This option
+     * has security implications if set to true, and we only recommend you do
+     * so when connecting to a local Moodle instance.
+     */
+    rejectInvalidSSL: false, // Accepts invalid SSL certs (useful for localhost)
+  }
+);
+```
+
 ## Contributing
 
 ### General Guidelines

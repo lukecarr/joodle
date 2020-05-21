@@ -1,4 +1,4 @@
-import { Client, ClientOptions } from "./client";
+import { Client, ClientOptions, HttpOptions } from "./client";
 import AuthModule from "./modules/auth";
 import CoreModule from "./modules/core";
 
@@ -16,10 +16,11 @@ export class Joodle extends Client {
    * Initializes a new Joodle client instance for making API calls to Moodle's
    * Web Services API.
    *
-   * @param options The client's configuration options.
+   * @param options     The client's configuration options.
+   * @param httpOptions HTTP configuration options to pass along to `got`.
    */
-  public constructor(options?: ClientOptions) {
-    super(options);
+  public constructor(options?: ClientOptions, httpOptions?: HttpOptions) {
+    super(options, httpOptions);
 
     this.auth = new AuthModule(this);
     this.core = new CoreModule(this);
