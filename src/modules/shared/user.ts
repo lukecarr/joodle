@@ -1,4 +1,4 @@
-interface CustomField {
+export interface CustomField {
   /**
    * The type of field (such as text field
    * or checkbox).
@@ -21,7 +21,7 @@ interface CustomField {
   shortname: string;
 }
 
-interface Preference {
+export interface Preference {
   /**
    * The preference's name.
    */

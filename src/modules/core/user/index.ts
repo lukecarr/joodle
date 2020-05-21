@@ -1,6 +1,11 @@
 import Module from "../..";
 import { FunctionResponse } from "../../../functions";
 import { SitePolicyAgreementResponse } from "./agree-site-policy";
+import {
+  UserProvidedPassword,
+  UserGeneratedPassword,
+  CreateUsersResponse,
+} from "./create-users";
 import { SearchCriteria, GetUsersResponse } from "./get-users";
 import { GetUsersByFieldResponse } from "./get-users-by-field";
 
@@ -16,6 +21,30 @@ export default class UserModule extends Module {
     return (await this.get(
       "core_user_agree_site_policy"
     )) as SitePolicyAgreementResponse;
+  }
+
+  /**
+   * Creates users and adds them to the Moodle site.
+   *
+   * @param users The users to create.
+   */
+  public async createUsers(
+    ...users: (UserProvidedPassword | UserGeneratedPassword)[]
+  ): Promise<CreateUsersResponse> {
+    const response = (await this.get("core_user_create_users", {
+      users,
+    })) as FunctionResponse;
+
+    const response1: CreateUsersResponse = {
+      users: [],
+      getHttpResponse: response.getHttpResponse,
+    };
+
+    response1.users = Object.values(response).filter(
+      (value) => typeof value !== "function"
+    );
+
+    return response1;
   }
 
   /**
