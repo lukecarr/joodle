@@ -6,6 +6,10 @@ import {
   UserGeneratedPassword,
   CreateUsersResponse,
 } from "./create-users";
+import {
+  CourseUser,
+  GetCourseUserProfilesResponse,
+} from "./get-course-user-profiles";
 import { SearchCriteria, GetUsersResponse } from "./get-users";
 import { GetUsersByFieldResponse } from "./get-users-by-field";
 
@@ -56,6 +60,30 @@ export default class UserModule extends Module {
     return (await this.get("core_user_delete_users", {
       userids: users,
     })) as FunctionResponse;
+  }
+
+  /**
+   * Gets the course profiles for users.
+   * @param users The users (comprising of user ID
+   * and course ID) to lookup.
+   */
+  public async getCourseUserProfiles(
+    ...users: CourseUser[]
+  ): Promise<GetCourseUserProfilesResponse> {
+    const response = (await this.get("core_user_get_course_user_profiles", {
+      userlist: users,
+    })) as FunctionResponse;
+
+    const profiles: GetCourseUserProfilesResponse = {
+      profiles: [],
+      getHttpResponse: response.getHttpResponse,
+    };
+
+    profiles.profiles = Object.values(response).filter(
+      (value) => typeof value !== "function"
+    );
+
+    return profiles;
   }
 
   /**
