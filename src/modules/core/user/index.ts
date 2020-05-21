@@ -12,6 +12,7 @@ import {
 } from "./get-course-user-profiles";
 import { SearchCriteria, GetUsersResponse } from "./get-users";
 import { GetUsersByFieldResponse } from "./get-users-by-field";
+import { GetPrivateFilesInfoResponse } from "./get-private-files-info";
 
 /**
  * Functions for user-related actions.
@@ -84,6 +85,22 @@ export default class UserModule extends Module {
     );
 
     return profiles;
+  }
+
+  /**
+   * Returns general information about files in
+   * a user's private files area.
+   *
+   * @param user The ID of the user to lookup file
+   * info on. If no ID is provided, the ID of the
+   * web service user is used.
+   */
+  public async getPrivateFilesInfo(
+    user?: number
+  ): Promise<GetPrivateFilesInfoResponse> {
+    return (await this.get("core_user_get_private_files_info", {
+      userid: user === undefined ? 0 : user,
+    })) as GetPrivateFilesInfoResponse;
   }
 
   /**
