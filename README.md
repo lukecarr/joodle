@@ -13,6 +13,10 @@
     <img src="https://img.shields.io/github/issues/lukecarr/joodle?style=for-the-badge" alt="Issues Open" />
   </a>
   <img src="https://img.shields.io/osslifecycle/lukecarr/joodle?style=for-the-badge" alt="OSS Lifecycle" />
+  <br><br>
+  <a href="https://ko-fi.com/lukecarr">
+    <img src="https://www.ko-fi.com/img/githubbutton_sm.svg" alt="Buy me a coffee!" />
+  </a>
 </p>
 
 <p align="center">
