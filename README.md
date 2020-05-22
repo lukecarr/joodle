@@ -31,9 +31,12 @@
 
 ## Key Features
 
-- Query Moodle's **[Web Services API](https://docs.moodle.org/dev/Web_services)**.
+- Node.js client for Moodle's **[Web Services API](https://docs.moodle.org/dev/Web_services)**.
+- `Promise` based API for `async`/`await` goodness!
+- Configurable HTTP client.
+- Built-in support for environment variables.
 - Type definitions out of the box!
-- `Promise` based API.
+- Extremely lightweight and flexible!
 
 ## Installation
 
