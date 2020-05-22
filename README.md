@@ -1,5 +1,5 @@
 <h1 align="center">
-  joodle
+  Joodle
 </h1>
 
 <h4 align="center">Moodle Web Service API client for Node.js</h4>
@@ -80,13 +80,13 @@ For example: taking the first function listed on the aforementioned Moodle docs 
 | :--------: | :----------------------------: |
 | auth_email | auth_email_get_signup_settings |
 
-The `auth_email` module would be accessible in joodle (`joodle.auth.email`) and contain a function (`getSignUpSettings()`) corresponding to the above function.
+The `auth_email` module is accessible in Joodle (`joodle.auth.email`) and contain a function (`getSignUpSettings()`) corresponding to the above function.
 
-Putting this all together, the above Moodle Web Services function corresponds to `joodle.auth.email.getSignUpSettings()` in joodle.
+Putting this all together, the above Moodle Web Services function corresponds to `joodle.auth.email.getSignUpSettings()` in Joodle.
 
 ### Promise API
 
-All API calls in joodle return `Promises`, and resolve if a successful response is returned by Moodle, or reject if an error is encountered.
+All API calls in Joodle return `Promises`, and resolve if a successful response is returned by Moodle, or reject if an error is encountered.
 
 ```js
 const { Joodle } = require("joodle");
@@ -142,7 +142,7 @@ Configuration options provided to the client constructor take priority over (ove
 
 ### HTTP Configuration
 
-Several HTTP configuration options from **got** (the HTTP library Joodle uses) are exposed so you can configure them to your liking.
+Several HTTP configuration options from **got** (the HTTP library used by Joodle) are exposed so you can configure them to your liking.
 
 You can provide HTTP options as a second parameter when initializing the `Joodle` client.
 
