@@ -8,9 +8,9 @@ import CoreModule from "./modules/core";
  */
 // eslint-disable-next-line import/prefer-default-export
 export class Joodle extends Client {
-  public auth: AuthModule;
+  public readonly auth: AuthModule;
 
-  public core: CoreModule;
+  public readonly core: CoreModule;
 
   /**
    * Initializes a new Joodle client instance for making API calls to Moodle's
