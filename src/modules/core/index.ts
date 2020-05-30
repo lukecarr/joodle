@@ -8,11 +8,11 @@ import { Client } from "../../client";
  * Functions relating to core Moodle operations.
  */
 export default class CoreModule extends Module {
-  public webservice: WebServiceModule;
+  public readonly webservice: WebServiceModule;
 
-  public user: UserModule;
+  public readonly user: UserModule;
 
-  public role: RoleModule;
+  public readonly role: RoleModule;
 
   public constructor(client: Client) {
     super(client);

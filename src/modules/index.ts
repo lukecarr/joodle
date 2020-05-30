@@ -22,7 +22,7 @@ const handleResponse = async (
  * Represents a collection of Moodle Web Services API functions.
  */
 export default abstract class Module {
-  protected client: Client;
+  protected readonly client: Client;
 
   public constructor(client: Client) {
     this.client = client;
