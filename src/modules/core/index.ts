@@ -1,6 +1,7 @@
 import Module from "..";
 import WebServiceModule from "./webservice";
 import UserModule from "./user";
+import RoleModule from "./role";
 import { Client } from "../../client";
 
 /**
@@ -11,9 +12,12 @@ export default class CoreModule extends Module {
 
   public user: UserModule;
 
+  public role: RoleModule;
+
   public constructor(client: Client) {
     super(client);
     this.webservice = new WebServiceModule(client);
     this.user = new UserModule(client);
+    this.role = new RoleModule(client);
   }
 }
