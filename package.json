@@ -33,7 +33,7 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "lint:eslint": "eslint \"src/**\" --fix",
-    "lint:prettier": "prettier --write *.md *.json **/*.yml",
+    "lint:prettier": "prettier --write *.md docs/**/*.md *.json **/*.yml",
     "lint": "npm-run-all lint:*",
     "test:unit": "jest --passWithNoTests",
     "test:coverage": "codecov",
