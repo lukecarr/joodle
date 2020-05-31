@@ -1,13 +1,13 @@
 {
   "name": "joodle",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Moodle Web Service API client for Node.js.",
   "keywords": [
     "moodle",
     "moodle-ws",
     "moodle-api"
   ],
-  "homepage": "https://github.com/lukecarr/joodle",
+  "homepage": "https://joodle.lukecarr.dev",
   "bugs": {
     "url": "https://github.com/lukecarr/joodle/issues"
   },
