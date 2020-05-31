@@ -1,3 +1,19 @@
+# 0.2.1
+
+### Features
+
+- **modules:** added roles module (w/ assign and unassign functions) ([ae787ea](https://github.com/lukecarr/joodle/commit/ae787ea2817e80f62c24792ad0cf3a6603dd2890))
+
+### Documentation
+
+- **readme:** added code coverage shield ([35a7e19](https://github.com/lukecarr/joodle/commit/35a7e19931615b475155f115820049e5e16dc12d))
+- initialised docs with VuePress ([2690b73](https://github.com/lukecarr/joodle/commit/2690b73cca056ec6adc9f1e0f906680b27c5114a))
+- added docs (using VuePress) ([0319af3](https://github.com/lukecarr/joodle/commit/0319af3d136ed3e1aa3f0a955d98bc91f5bfee13))
+
+### Refactors
+
+- module-related class properties are now readonly ([efe56d7](https://github.com/lukecarr/joodle/commit/efe56d7f6c1cbec2e63a4692123263fded568706))
+
 # 0.2.0
 
 ### Features

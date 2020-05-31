@@ -26,7 +26,7 @@
 <p align="center">
   <strong>
     <a href="#key-features">Key Features</a> •
-    <a href="#installation">Installation</a> •
+    <a href="https://joodle.lukecarr.dev">Documentation</a> •
     <a href="#usage">Usage</a> •
     <a href="#contributing">Contributing</a> •
     <a href="#credits">Credits</a>
@@ -58,134 +58,7 @@ $ yarn add joodle
 
 ## Usage
 
-### Initialization
-
-Initialize an instance of `Joodle` which is your client used for accessing Moodle's Web Services API.
-
-```js
-const { Joodle } = require("joodle");
-
-const joodle = new Joodle({
-  baseURL: "http://localhost",
-  token: "your token",
-});
-```
-
-The `baseURL` option should point to your Moodle website, and the `token` option is your Moodle Web Services token.
-
-**You should not store your token in your source code! Please use other means such as [environment variables](#environment-variables) or loading from a file excluded from version control.**
-
-### Modules
-
-Joodle is split up into modules to mimic the way that Moodle's Web Services API has functions grouped by **[their area](https://docs.moodle.org/dev/Web_service_API_functions)**.
-
-All modules (and their web service functions) are accessible through your `Joodle` instance.
-
-For example: taking the first function listed on the aforementioned Moodle docs page.
-
-|    Area    |              Name              |
-| :--------: | :----------------------------: |
-| auth_email | auth_email_get_signup_settings |
-
-The `auth_email` module is accessible in Joodle (`joodle.auth.email`) and contain a function (`getSignUpSettings()`) corresponding to the above function.
-
-Putting this all together, the above Moodle Web Services function corresponds to `joodle.auth.email.getSignUpSettings()` in Joodle.
-
-### Promise API
-
-All API calls in Joodle return `Promises`, and resolve if a successful response is returned by Moodle, or reject if an error is encountered.
-
-```js
-const { Joodle } = require("joodle");
-
-const joodle = new Joodle(...);
-
-joodle.auth.email.getSignUpSettings().then((response) => {
-  //=> Successful. Log response from Moodle...
-  console.log(response);
-}).catch((error) => {
-  //=> Moodle threw an error!
-  console.error(error);
-});
-```
-
-You can also use the `async`/`await` syntax:
-
-```js
-const { Joodle } = require("joodle");
-
-const joodle = new Joodle(...);
-
-(async () => {
-  try {
-    const response = await joodle.auth.email.getSignUpSettings();
-    //=> Successful. Log response from Moodle...
-    console.log(response);
-  } catch (error) {
-    //=> Moodle threw an error!
-    console.error(error);
-  }
-})();
-```
-
-### Raw HTTP Responses
-
-Every function call response contains a `getHttpResponse()` method that allows you to access the raw HTTP response that was returned by Moodle's Web Services API.
-
-```js
-joodle.auth.email.getSignUpSettings().then((response) => {
-  //=> Successful. Log raw HTTP response from Moodle...
-  console.log(response.getHttpResponse());
-});
-```
-
-### Environment Variables
-
-You can use environment varaibles instead of providing an options object when initializing the `Joodle` client.
-
-Setting the `JOODLE_BASE_URL` environment variable will emulate the `baseURL` client option, and `JOODLE_TOKEN` emulates the `token` option.
-
-Configuration options provided to the client constructor take priority over (override) any environment variables declared.
-
-### HTTP Configuration
-
-Several HTTP configuration options from **got** (the HTTP library used by Joodle) are exposed so you can configure them to your liking.
-
-You can provide HTTP options as a second parameter when initializing the `Joodle` client.
-
-```js
-const joodle = new Joodle(
-  {
-    ...
-  },
-  {
-    /**
-     * The duration in milliseconds that the client should wait for a response
-     * before aborting the request.
-     *
-     * By default, there is no response timeout duration.
-     */
-    timeout: 5000, // Timeout after 5 seconds (5000 milliseconds)
-
-    /**
-     * How many retries should the client attempt to make on failure.
-     *
-     * By default, the client will attempt 2 retries if the first request fails.
-     */
-    retries: 2, // A function call will giv eup after 2 failed retries
-
-    /**
-     * Whether the client should reject invalid SSL certificates (true) or not
-     * (false).
-     *
-     * By default, the client will reject invalid SSL certificates. This option
-     * has security implications if set to true, and we only recommend you do
-     * so when connecting to a local Moodle instance.
-     */
-    rejectInvalidSSL: false, // Accepts invalid SSL certs (useful for localhost)
-  }
-);
-```
+Check out our [Getting Started Guide](https://joodle.lukecarr.dev/guide) over on our official docs for a tutorial on using Joodle.
 
 ## Contributing
 
@@ -204,5 +77,6 @@ This project uses the following open source packages:
 - **[Node.js](https://nodejs.org)**
 - **[TypeScript](https://www.typescriptlang.org)**
 - **[got](https://github.com/sindresorhus/got)**
+- **[VuePress](https://vuepress.vuejs.org)**
 
 For a comprehensive list, see the **[package.json](package.json)** file's dependencies section.
