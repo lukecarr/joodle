@@ -84,7 +84,8 @@ describe("The Joodle client class", () => {
   it("should allow HTTP options to be provided as a second constructor parameter", () => {
     expect(joodle.got.defaults.options.timeout.request).toBe(timeout);
     expect(joodle.got.defaults.options.retry.limit).toBe(retries);
-    expect(joodle.got.defaults.options.rejectUnauthorized).toBe(
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    expect(joodle.got.defaults.options.https!.rejectUnauthorized).toBe(
       rejectInvalidSSL
     );
   });
