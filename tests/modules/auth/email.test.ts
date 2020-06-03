@@ -21,36 +21,45 @@ describe("The auth.email module", () => {
     });
 
     nock(baseURL)
-      .get(`/webservice/rest/server.php?wsfunction=auth_email_get_signup_settings&wstoken=${token}&moodlewsrestformat=json`)
+      .get(
+        `/webservice/rest/server.php?wsfunction=auth_email_get_signup_settings&wstoken=${token}&moodlewsrestformat=json`
+      )
       .reply(200, {
-        namefields: [
-          "firstname",
-          "lastname",
-        ],
+        namefields: ["firstname", "lastname"],
       });
 
     nock(baseURL)
-      .get(`/webservice/rest/server.php?wsfunction=auth_email_get_signup_settings&wstoken=xyz789&moodlewsrestformat=json`)
+      .get(
+        `/webservice/rest/server.php?wsfunction=auth_email_get_signup_settings&wstoken=xyz789&moodlewsrestformat=json`
+      )
       .reply(200, error);
 
     nock(baseURL)
-      .get(`/webservice/rest/server.php?wsfunction=auth_email_signup_user&username=test&firstname=Test&lastname=User&email=test%40example.com&password=password&wstoken=${token}&moodlewsrestformat=json`)
+      .get(
+        `/webservice/rest/server.php?wsfunction=auth_email_signup_user&username=test&firstname=Test&lastname=User&email=test%40example.com&password=password&wstoken=${token}&moodlewsrestformat=json`
+      )
       .reply(200, {
         success: 1,
       });
 
     nock(baseURL)
-      .get(`/webservice/rest/server.php?wsfunction=auth_email_signup_user&wstoken=xyz789&moodlewsrestformat=json`)
+      .get(
+        `/webservice/rest/server.php?wsfunction=auth_email_signup_user&wstoken=xyz789&moodlewsrestformat=json`
+      )
       .reply(200, error);
   });
 
   describe("the getSignUpSettings() function", () => {
     it("should handle successful responses", () => {
-      return expect(joodle.auth.email.getSignUpSettings()).resolves.toBeDefined();
+      return expect(
+        joodle.auth.email.getSignUpSettings()
+      ).resolves.toBeDefined();
     });
-  
+
     it("should handle erroneous responses", () => {
-      return expect(joodle.auth.email.getSignUpSettings()).rejects.toBeDefined();
+      return expect(
+        joodle.auth.email.getSignUpSettings()
+      ).rejects.toBeDefined();
     });
   });
 
@@ -66,7 +75,7 @@ describe("The auth.email module", () => {
     it("should handle successful responses", () => {
       return expect(joodle.auth.email.signUpUser(user)).resolves.toBeDefined();
     });
-  
+
     it("should handle erroneous responses", () => {
       return expect(joodle.auth.email.signUpUser(user)).rejects.toBeDefined();
     });

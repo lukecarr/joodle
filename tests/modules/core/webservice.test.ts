@@ -13,7 +13,9 @@ describe("The core.webservice module", () => {
     });
 
     nock(baseURL)
-      .get(`/webservice/rest/server.php?wsfunction=core_webservice_get_site_info&wstoken=${token}&moodlewsrestformat=json`)
+      .get(
+        `/webservice/rest/server.php?wsfunction=core_webservice_get_site_info&wstoken=${token}&moodlewsrestformat=json`
+      )
       .reply(200, {
         sitename: "New Site",
         username: "test",
@@ -49,20 +51,26 @@ describe("The core.webservice module", () => {
       });
 
     nock(baseURL)
-      .get(`/webservice/rest/server.php?wsfunction=core_webservice_get_site_info&wstoken=xyz789&moodlewsrestformat=json`)
+      .get(
+        `/webservice/rest/server.php?wsfunction=core_webservice_get_site_info&wstoken=xyz789&moodlewsrestformat=json`
+      )
       .reply(200, {
         exception: "webservice_access_exception",
         errorcode: "accessexception",
-        message: "Access control exception (Access to the function core_webservice_get_site_info() is not allowed.",
-        debuginfo: "Access to the function core_webservice_get_site_info() is not allowed.",
+        message:
+          "Access control exception (Access to the function core_webservice_get_site_info() is not allowed.",
+        debuginfo:
+          "Access to the function core_webservice_get_site_info() is not allowed.",
       });
   });
 
   describe("the getSiteInfo() function", () => {
     it("should handle successful responses", () => {
-      return expect(joodle.core.webservice.getSiteInfo()).resolves.toBeDefined();
+      return expect(
+        joodle.core.webservice.getSiteInfo()
+      ).resolves.toBeDefined();
     });
-  
+
     it("should handle erroneous responses", () => {
       return expect(joodle.core.webservice.getSiteInfo()).rejects.toBeDefined();
     });
