@@ -4,7 +4,7 @@
  * title: core
  * ---
  */
-import Module from "..";
+import Module from "../../module";
 import WebServiceModule from "./webservice";
 import UserModule from "./user";
 import RoleModule from "./role";

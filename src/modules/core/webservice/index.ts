@@ -4,7 +4,7 @@
  * title: core.webservice
  * ---
  */
-import Module from "../..";
+import Module from "../../../module";
 import { SiteInfoResponse } from "./get-site-info";
 
 /**
