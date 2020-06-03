@@ -3,7 +3,7 @@ const tasks = arr => arr.join(" && ")
 module.exports = {
   hooks: {
     "pre-commit": tasks([
-      "npm run lint"
+      "yarn lint:check"
     ]),
     "prepare-commit-msg": tasks([
       "exec < /dev/tty && git cz --hook || true"
