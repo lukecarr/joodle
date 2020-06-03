@@ -1,3 +1,9 @@
+/**
+ * @vuepress
+ * ---
+ * title: Client
+ * ---
+ */
 import got, { Got } from "got";
 
 export interface ClientOptions {

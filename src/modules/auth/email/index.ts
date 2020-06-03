@@ -1,3 +1,9 @@
+/**
+ * @vuepress
+ * ---
+ * title: auth.email
+ * ---
+ */
 import Module from "../..";
 import { SignUpSettingsResponse } from "./sign-up-settings";
 import { SignUpUser, SignUpUserResponse } from "./sign-up-user";

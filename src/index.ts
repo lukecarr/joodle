@@ -1,3 +1,9 @@
+/**
+ * @vuepress
+ * ---
+ * title: Joodle
+ * ---
+ */
 import { Client, ClientOptions, HttpOptions } from "./client";
 import AuthModule from "./modules/auth";
 import CoreModule from "./modules/core";

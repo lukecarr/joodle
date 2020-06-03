@@ -1,3 +1,9 @@
+/**
+ * @vuepress
+ * ---
+ * title: core.role
+ * ---
+ */
 import Module from "../..";
 import { FunctionResponse } from "../../../functions";
 

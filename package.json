@@ -30,6 +30,7 @@
   },
   "scripts": {
     "dev": "ts-node src/sandbox.ts",
+    "docs:jsdoc": "vuepress-jsdoc --source ./src --dist ./docs --folder reference --title \"API Reference\" -c ./jsdoc.json",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "lint:eslint": "eslint \"src/**\" \"tests/**\"",
@@ -43,7 +44,7 @@
     "build:types": "tsc --emitDeclarationOnly",
     "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
     "build": "yarn build:clean && yarn build:types && yarn build:js*",
-    "prepare": "yarn lint:check && yarn test && yarn build"
+    "prepublishOnly": "yarn lint:check && yarn test && yarn build"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
@@ -73,6 +74,8 @@
     "eslint-plugin-prettier": "^3.1.3",
     "husky": "^4.2.5",
     "jest": "^26.0.1",
+    "jsdoc-babel": "^0.5.0",
+    "jsdoc-to-markdown": "^6.0.1",
     "nock": "^12.0.3",
     "prettier": "^2.0.5",
     "rimraf": "^3.0.2",
@@ -80,7 +83,8 @@
     "ts-jest": "^26.0.0",
     "ts-node": "^8.10.1",
     "typescript": "^3.9.3",
-    "vuepress": "^1.5.0"
+    "vuepress": "^1.5.0",
+    "vuepress-jsdoc": "^3.0.0"
   },
   "dependencies": {
     "@babel/runtime": "^7.9.6",
