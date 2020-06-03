@@ -4,7 +4,7 @@
  * title: core.role
  * ---
  */
-import Module from "../..";
+import Module from "../../../module";
 import { FunctionResponse } from "../../../functions";
 
 interface RoleAssignment {

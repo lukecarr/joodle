@@ -4,7 +4,7 @@
  * title: core.user
  * ---
  */
-import Module from "../..";
+import Module from "../../../module";
 import { FunctionResponse } from "../../../functions";
 import { SitePolicyAgreementResponse } from "./agree-site-policy";
 import {

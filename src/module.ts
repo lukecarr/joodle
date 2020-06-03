@@ -5,8 +5,8 @@
  * ---
  */
 import qs from "qs";
-import { Client } from "../client";
-import { FunctionResponse } from "../functions";
+import { Client } from "./client";
+import { FunctionResponse } from "./functions";
 
 /**
  * Attempts to handle a JSON body returned by a call to Moodle's Web Services API.

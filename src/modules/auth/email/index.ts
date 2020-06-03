@@ -4,7 +4,7 @@
  * title: auth.email
  * ---
  */
-import Module from "../..";
+import Module from "../../../module";
 import { SignUpSettingsResponse } from "./sign-up-settings";
 import { SignUpUser, SignUpUserResponse } from "./sign-up-user";
 
