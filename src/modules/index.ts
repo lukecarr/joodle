@@ -1,3 +1,9 @@
+/**
+ * @vuepress
+ * ---
+ * title: Module
+ * ---
+ */
 import qs from "qs";
 import { Client } from "../client";
 import { FunctionResponse } from "../functions";

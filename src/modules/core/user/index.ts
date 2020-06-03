@@ -1,3 +1,9 @@
+/**
+ * @vuepress
+ * ---
+ * title: core.user
+ * ---
+ */
 import Module from "../..";
 import { FunctionResponse } from "../../../functions";
 import { SitePolicyAgreementResponse } from "./agree-site-policy";

@@ -1,3 +1,5 @@
+const { sidebarTree } = require("../reference/config");
+
 module.exports = {
   title: "Joodle",
   description: "Documentation for Joodle, a Moodle Web Service API client for Node.js.",
@@ -20,7 +22,7 @@ module.exports = {
 
     lastUpdated: "Last Updated",
 
-    sidebar: {
+    sidebar: Object.assign({
       "/guide/": [
         {
           title: "Guide",
@@ -35,16 +37,7 @@ module.exports = {
           ]
         }
       ],
-      "/reference/": [
-        {
-          title: "API Reference",
-          collapsable: false,
-          children: [
-            ""
-          ]
-        }
-      ]
-    },
+    }, sidebarTree("Introduction")),
 
     smoothScroll: true,
 

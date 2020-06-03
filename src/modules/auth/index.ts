@@ -1,3 +1,9 @@
+/**
+ * @vuepress
+ * ---
+ * title: auth
+ * ---
+ */
 import Module from "..";
 import AuthEmailModule from "./email";
 import { Client } from "../../client";

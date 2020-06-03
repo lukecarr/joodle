@@ -1,3 +1,9 @@
+/**
+ * @vuepress
+ * ---
+ * title: core
+ * ---
+ */
 import Module from "..";
 import WebServiceModule from "./webservice";
 import UserModule from "./user";

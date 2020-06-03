@@ -1,3 +1,9 @@
+/**
+ * @vuepress
+ * ---
+ * title: core.webservice
+ * ---
+ */
 import Module from "../..";
 import { SiteInfoResponse } from "./get-site-info";
 
