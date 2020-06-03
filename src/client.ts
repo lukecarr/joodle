@@ -79,10 +79,12 @@ export abstract class Client {
       // HTTP Options
       timeout: (httpOptions && httpOptions.timeout) || undefined,
       retry: (httpOptions && httpOptions.retries) || 2,
-      rejectUnauthorized:
-        httpOptions && httpOptions.rejectInvalidSSL !== undefined
-          ? httpOptions.rejectInvalidSSL
-          : true,
+      https: {
+        rejectUnauthorized:
+          httpOptions && httpOptions.rejectInvalidSSL !== undefined
+            ? httpOptions.rejectInvalidSSL
+            : true,
+      },
     });
   }
 }
