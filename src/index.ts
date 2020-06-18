@@ -7,6 +7,7 @@
 import { Client, ClientOptions, HttpOptions } from "./client";
 import AuthModule from "./modules/auth";
 import CoreModule from "./modules/core";
+import GradeReportModule from "./modules/gradereport";
 
 /**
  * The main Joodle client class. Used to make API calls to Moodle's Web Services
@@ -17,6 +18,8 @@ export class Joodle extends Client {
   public readonly auth: AuthModule;
 
   public readonly core: CoreModule;
+
+  public readonly gradereport: GradeReportModule;
 
   /**
    * Initializes a new Joodle client instance for making API calls to Moodle's
@@ -30,5 +33,6 @@ export class Joodle extends Client {
 
     this.auth = new AuthModule(this);
     this.core = new CoreModule(this);
+    this.gradereport = new GradeReportModule(this);
   }
 }
