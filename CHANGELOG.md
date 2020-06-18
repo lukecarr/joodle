@@ -4,6 +4,31 @@
 
 - **modules:** added gradereport_user_get_grade_items function ([bb0396f](https://github.com/lukecarr/joodle/commit/bb0396f82e1295adcab8135d641dda5551e5eb43))
 
+### Build
+
+- **npm:** excluded documentation source from NPM packaging ([5086143](https://github.com/lukecarr/joodle/commit/5086143f9caa3ae3e9e2ef7107e72adef4002059))
+- migrated from NPM to Yarn ([b8b842d](https://github.com/lukecarr/joodle/commit/b8b842dddd4e03bef9032dff41f6d1dab8816eab))
+- **npm:** added documentation back into NPM package ([140f86b](https://github.com/lukecarr/joodle/commit/140f86bfbcb9cac19756dab5be5367de97e9a45f))
+- **npm:** fixed typo in build script ([04de6da](https://github.com/lukecarr/joodle/commit/04de6dacaacf17bc577c0f296f6de5e933b09c3f))
+
+### Style
+
+- **docs:** applied Prettier formatting to documentation homepage ([0b365eb](https://github.com/lukecarr/joodle/commit/0b365ebd9f3d7de11c8b93eb2fe7432a0d80485f))
+- **tests:** applied ESLint formatting to unit tests ([04439da](https://github.com/lukecarr/joodle/commit/04439dab9c6a28e8e1e4efb5ac87add1cfb4b9c4))
+
+### Refactors
+
+- **yarn:** rearranged Yarn scripts ([13be2a1](https://github.com/lukecarr/joodle/commit/13be2a1cbe2d56e4de26605e49deb7d512bf8a05))
+- **modules:** moved module class definition ([2594388](https://github.com/lukecarr/joodle/commit/2594388d07d3cbd25434945fe5a7a60853aa82b9))
+
+### Bug Fixes
+
+- **got:** deprecation issue with rejectUnauthorized HTTP option ([ca33cbd](https://github.com/lukecarr/joodle/commit/ca33cbda512598ad06059d5bf104a2d096b065be))
+
+### Documentation
+
+- **api:** added automatic API reference doc generation ([1a44c52](https://github.com/lukecarr/joodle/commit/1a44c522b21d02392dd28a9db23f27f172e48694))
+
 # 0.2.1
 
 ### Features
