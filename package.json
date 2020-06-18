@@ -43,7 +43,7 @@
     "build:clean": "rimraf dist",
     "build:types": "tsc --emitDeclarationOnly",
     "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
-    "build": "yarn build:clean && yarn build:types && yarn build:js*",
+    "build": "yarn build:clean && yarn build:types && yarn build:js",
     "prepublishOnly": "yarn lint:check && yarn test && yarn build"
   },
   "devDependencies": {
