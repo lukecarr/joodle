@@ -1,3 +1,9 @@
+# 0.2.2
+
+### Features
+
+- **modules:** added gradereport_user_get_grade_items function ([bb0396f](https://github.com/lukecarr/joodle/commit/bb0396f82e1295adcab8135d641dda5551e5eb43))
+
 # 0.2.1
 
 ### Features
