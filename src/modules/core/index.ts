@@ -12,14 +12,39 @@ import { Client } from "../../client";
 
 /**
  * Functions relating to core Moodle operations.
+ *
+ * @since 0.2.0
+ * @extends Module
  */
 export default class CoreModule extends Module {
+  /**
+   * The module containing functions relating to system actions.
+   *
+   * @since 0.2.0
+   */
   public readonly webservice: WebServiceModule;
 
+  /**
+   * The module containg functions for user-related actions.
+   *
+   * @since 0.2.0
+   */
   public readonly user: UserModule;
 
+  /**
+   * The module containing functions for assigning and unassigning user roles.
+   *
+   * @since 0.2.1
+   */
   public readonly role: RoleModule;
 
+  /**
+   * Initializes the module.
+   *
+   * @param client The parent client of this module.
+   *
+   * @since 0.2.0
+   */
   public constructor(client: Client) {
     super(client);
     this.webservice = new WebServiceModule(client);

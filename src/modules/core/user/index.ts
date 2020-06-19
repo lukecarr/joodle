@@ -28,11 +28,19 @@ import { UserPictureResponse } from "./user-picture";
 
 /**
  * Functions for user-related actions.
+ *
+ * @since 0.2.0
+ * @extends Module
  */
 export default class UserModule extends Module {
   /**
-   * Agrees to the Moodle site policy for the current
-   * web service user.
+   * Agrees to the Moodle site policy for the current web service user.
+   *
+   * @returns {Promise<SitePolicyAgreementResponse>} The response returned
+   *                                                 by Moodle.
+   *
+   * @since 0.2.0
+   * @async
    */
   public async agreeSitePolicy(): Promise<SitePolicyAgreementResponse> {
     return (await this.get(
@@ -44,6 +52,11 @@ export default class UserModule extends Module {
    * Creates users and adds them to the Moodle site.
    *
    * @param users The users to create.
+   *
+   * @returns {Promise<CreateUsersResponse>} The response returned by Moodle.
+   *
+   * @since 0.2.0
+   * @async
    */
   public async createUsers(
     ...users: (UserProvidedPassword | UserGeneratedPassword)[]
@@ -67,7 +80,12 @@ export default class UserModule extends Module {
   /**
    * Deletes users from the Moodle site.
    *
-   * @param users The IDs of the users to delete.
+   * @param {number[]} users The IDs of the users to delete.
+   *
+   * @returns {Promise<FunctionResponse>} The response returned by Moodle.
+   *
+   * @since 0.2.0
+   * @async
    */
   public async deleteUsers(...users: number[]): Promise<FunctionResponse> {
     return (await this.get("core_user_delete_users", {
@@ -77,8 +95,15 @@ export default class UserModule extends Module {
 
   /**
    * Gets the course profiles for users.
-   * @param users The users (comprising of user ID
-   * and course ID) to lookup.
+   *
+   * @param {CourseUser[]} users The users (comprising of user ID and course ID)
+   *                             to lookup.
+   *
+   * @returns {Promise<GetCourseUserProfilesResponse>} The response returned by
+   *                                                   Moodle.
+   *
+   * @since 0.2.0
+   * @async
    */
   public async getCourseUserProfiles(
     ...users: CourseUser[]
@@ -100,12 +125,15 @@ export default class UserModule extends Module {
   }
 
   /**
-   * Returns general information about files in
-   * a user's private files area.
+   * Returns general information about files in a user's private files area.
    *
-   * @param user The ID of the user to lookup file
-   * info on. If no ID is provided, the ID of the
-   * web service user is used.
+   * @param {number} [user] The ID of the user to lookup file info on. If none is provided,
+   *                        the ID of the web service user is used.
+   *
+   * @returns {Promise<GetPrivateFilesInfoResponse>} The response returned by Moodle.
+   *
+   * @since 0.2.0
+   * @async
    */
   public async getPrivateFilesInfo(
     user?: number
@@ -118,12 +146,15 @@ export default class UserModule extends Module {
   /**
    * Returns user preferences for a Moodle user.
    *
-   * @param name The name of the preference to
-   * lookup. If no name is provided, all
-   * preferences are returned.
-   * @param user The ID of the user to lookup
-   * preferences for. If no ID is provided, the
-   * ID of the web service user is used.
+   * @param {string} [name] The name of the preference to lookup. If none is provided, all
+   *                        preferences are returned.
+   * @param {number} [user] The ID of the user to lookup preferences for. If none is provided,
+   *                        the ID of the web service user is used.
+   *
+   * @returns {Promise<GetUserPreferencesResponse>} The response returned by Moodle.
+   *
+   * @since 0.2.0
+   * @async
    */
   public async getUserPreferences(
     name?: string,
@@ -138,7 +169,12 @@ export default class UserModule extends Module {
   /**
    * Sets user preferences for Moodle users.
    *
-   * @param preferences The preferences to set.
+   * @param {NewPreference[]} preferences The preferences to set.
+   *
+   * @returns {Promise<SetUserPreferencesResponse>} The response returned by Moodle.
+   *
+   * @since 0.2.0
+   * @async
    */
   public async setUserPreferences(
     ...preferences: NewPreference[]
@@ -149,8 +185,15 @@ export default class UserModule extends Module {
   }
 
   /**
-   * Searches for users on the Moodle site that match
-   * the provided crtieria.
+   * Searches for users on the Moodle site that match the provided crtieria.
+   *
+   * @param {SearchCriteria[]} criteria The search criteria used to search for
+   *                                    users.
+   *
+   * @returns {Promise<GetUsersResponse>} The response returned by Moodle.
+   *
+   * @since 0.2.0
+   * @async
    */
   public async getUsers(
     ...criteria: SearchCriteria[]
@@ -161,11 +204,17 @@ export default class UserModule extends Module {
   }
 
   /**
-   * Searches for users on the Moodle site that match
-   * a specific field value.
+   * Searches for users on the Moodle site that match a specific field value.
    *
-   * @param field  The name of the field to search.
-   * @param values The value to search users' fields for.
+   * @param {"id" | "idnumber" | "username" | "email"} field  The name of the
+   *                                                          field to search for.
+   * @param                                            values The value to search
+   *                                                          users' fields for.
+   *
+   * @returns {Promise<GetUsersByFieldResponse>} The response returned by Moodle.
+   *
+   * @since 0.2.0
+   * @async
    */
   public async getUsersByField(
     field: "id" | "idnumber" | "username" | "email",
@@ -174,7 +223,7 @@ export default class UserModule extends Module {
     const response = (await this.get("core_user_get_users_by_field", {
       field,
       values,
-    })) as FunctionResponse;
+    })) as GetUsersByFieldResponse;
 
     const users: GetUsersByFieldResponse = {
       users: [],
@@ -191,11 +240,15 @@ export default class UserModule extends Module {
   /**
    * Updates a user's profile picture.
    *
-   * @param draftItemId The ID of the draft file to
-   * use as the picture.
-   * @param user The ID of the user to update the
-   * picture of. If no ID is provided, the ID of
-   * the web service user is used.
+   * @param {number} draftItemId The ID of the draft file to use as the picture.
+   * @param {number} [user]      The ID of the user to update the picture of. If
+   *                             none is provided, the ID of the web service user
+   *                             is used.
+   *
+   * @returns {Promise<UserPictureResponse>} The response returned by Moodle.
+   *
+   * @since 0.2.0
+   * @async
    */
   public async updateUserPicture(
     draftItemId: number,
@@ -210,9 +263,13 @@ export default class UserModule extends Module {
   /**
    * Deletes a user's profile picture.
    *
-   * @param user The ID of the user to delete the
-   * picture of. If no ID is provided, the ID of
-   * the web service user is used.
+   * @param {number} [user] The ID of the user to delete the picture of. If none
+   *                        is provided, the ID of the web service user is used.
+   *
+   * @returns {Promise<UserPictureResponse>} The response returned by Moodle.
+   *
+   * @since 0.2.0
+   * @async
    */
   public async deleteUserPicture(user?: number): Promise<UserPictureResponse> {
     return (await this.get("core_user_update_picture", {

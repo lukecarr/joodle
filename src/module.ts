@@ -14,6 +14,7 @@ import { FunctionResponse } from "./functions";
  * be erroneous, and a rejected Promise is returned.
  *
  * @param body A JSON body returned by a Moodle API call.
+ * @since 0.1.0
  */
 const handleResponse = async (
   response: FunctionResponse
@@ -26,10 +27,25 @@ const handleResponse = async (
 
 /**
  * Represents a collection of Moodle Web Services API functions.
+ *
+ * @abstract
+ * @since 0.1.0
  */
 export default abstract class Module {
+  /**
+   * The Joodle client that this module belongs to.
+   *
+   * @since 0.1.0
+   */
   protected readonly client: Client;
 
+  /**
+   * Initializes the module.
+   *
+   * @param {Client} [client] The parent client of this module.
+   *
+   * @since 0.1.0
+   */
   public constructor(client: Client) {
     this.client = client;
   }
@@ -37,8 +53,11 @@ export default abstract class Module {
   /**
    * Performs a GET request to Moodle's Web Services API.
    *
-   * @param wsfunction The name of the Moodle Web Services API function to invoke.
-   * @param searchParams Any additional GET parameters to include in the request.
+   * @param {string} wsfunction  The name of the Moodle Web Services API function to invoke.
+   * @param {any} [searchParams] Any additional GET parameters to include in the request.
+   *
+   * @protected
+   * @since 0.1.0
    */
   protected async get(
     wsfunction: string,

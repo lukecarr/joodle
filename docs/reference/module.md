@@ -24,21 +24,39 @@ be erroneous, and a rejected Promise is returned.</p>
 
 <a name="Module"></a>
 
-## Module
+## *Module*
 Represents a collection of Moodle Web Services API functions.
 
-**Kind**: global class  
+**Kind**: global abstract class  
+**Since**: 0.1.0  
+
+* *[Module](#Module)*
+    * *[new Module([client])](#new_Module_new)*
+    * *[.get(wsfunction, [searchParams])](#Module+get)*
+
+<a name="new_Module_new"></a>
+
+### *new Module([client])*
+Initializes the module.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [client] | <code>Client</code> | The parent client of this module. |
+
 <a name="Module+get"></a>
 
-### module.get(wsfunction, searchParams)
+### *module.get(wsfunction, [searchParams])*
 Performs a GET request to Moodle's Web Services API.
 
 **Kind**: instance method of [<code>Module</code>](#Module)  
+**Access**: protected  
+**Since**: 0.1.0  
 
-| Param | Description |
-| --- | --- |
-| wsfunction | The name of the Moodle Web Services API function to invoke. |
-| searchParams | Any additional GET parameters to include in the request. |
+| Param | Type | Description |
+| --- | --- | --- |
+| wsfunction | <code>string</code> | The name of the Moodle Web Services API function to invoke. |
+| [searchParams] | <code>any</code> | Any additional GET parameters to include in the request. |
 
 <a name="handleResponse"></a>
 
@@ -48,6 +66,7 @@ If the body contains an `exception` property, then the response is assumed to
 be erroneous, and a rejected Promise is returned.
 
 **Kind**: global function  
+**Since**: 0.1.0  
 
 | Param | Description |
 | --- | --- |
