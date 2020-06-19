@@ -33,7 +33,8 @@ module.exports = {
             "installation",
             "initialization",
             "example-usage",
-            "configuration"
+            "configuration",
+            "caching"
           ]
         }
       ],
