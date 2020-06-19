@@ -60,20 +60,40 @@ export interface HttpOptions {
 
 /**
  * A client that can send HTTP requests to a Moodle site's Web Services API.
+ *
+ * @since 0.1.0
+ * @abstract
  */
 export abstract class Client {
+  /**
+   * The base URL of the Moodle site to send requests to.
+   *
+   * @since 0.1.0
+   */
   private baseURL?: string;
 
+  /**
+   * The token used to authenticate with Moodle's Web Services API.
+   *
+   * @since 0.1.0
+   */
   private token?: string;
 
+  /**
+   * The underlying got instance used for HTTP requests.
+   *
+   * @since 0.1.0
+   */
   public got: Got;
 
   /**
    * Initializes the client as well as the client's `got` instance so HTTP
    * requests can be made.
    *
-   * @param options     The client's configuration options.
-   * @param httpOptions HTTP configuration options to pass along to `got`.
+   * @param {ClientOptions} [options]     The client's configuration options.
+   * @param {HttpOptions}   [httpOptions] HTTP configuration options to pass
+   *                                      along to `got`.
+   * @since 0.1.0
    */
   public constructor(options?: ClientOptions, httpOptions?: HttpOptions) {
     this.baseURL = (options && options.baseURL) || process.env.JOODLE_BASE_URL;
