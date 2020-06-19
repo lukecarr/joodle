@@ -28,7 +28,8 @@ new Joodle(
   {
     timeout: 2000,
     retries: 5,
-    rejectInvalidSSL: false
+    rejectInvalidSSL: false,
+    cache: undefined
   }
 );
 ```
@@ -38,6 +39,8 @@ The `timeout` option defines the duration in milliseconds that the client should
 The `retries` option indicates how many times the client should retry a request upon failure. By default, the client will make retry the request twice if the first request to Moodle fails.
 
 The `rejectInvalidSSL` option indicates whether the client should reject invalid SSL certificates or not. By default, the client will reject invalid SSL certificates.
+
+The `cache` option allows you to enable HTTP response caching. By default, the client will not cache any responses. See the [Caching](/guide/caching.html) section for more information.
 
 ::: danger
 You should only set the `rejectInvalidSSL` option to `true` when connecting to local Moodle instances (`baseURL: "https://localhost"`). There are severe security implications when accepting invalid SSL certificates from remote Moodle sites.

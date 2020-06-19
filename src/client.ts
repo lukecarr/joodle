@@ -5,6 +5,7 @@
  * ---
  */
 import got, { Got } from "got";
+import CacheableRequest from "cacheable-request";
 
 export interface ClientOptions {
   /**
@@ -47,6 +48,14 @@ export interface HttpOptions {
    * so when connecting to a local Moodle instance.
    */
   rejectInvalidSSL?: boolean;
+
+  /**
+   * An object that implements the Map API (such as a `new Map()` or a Keyv
+   * instance) can be supplied here to cache requests. This caching behavior
+   * is compliant with RFC 7234, and uses the `If-None-Match`/`If-Modified-Since`
+   * HTTP headers to revalidate stale cache entries.
+   */
+  cache?: string | false | CacheableRequest.StorageAdapter;
 }
 
 /**
@@ -91,6 +100,10 @@ export abstract class Client {
             ? httpOptions.rejectInvalidSSL
             : true,
       },
+      cache:
+        httpOptions && httpOptions.cache !== undefined
+          ? httpOptions.cache
+          : undefined,
     });
   }
 }

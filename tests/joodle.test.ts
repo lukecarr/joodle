@@ -7,6 +7,7 @@ describe("The Joodle client class", () => {
   const timeout = 5000;
   const retries = 5;
   const rejectInvalidSSL = false;
+  const cache = new Map();
   let joodle: Joodle;
 
   beforeAll(() => {
@@ -19,6 +20,7 @@ describe("The Joodle client class", () => {
         timeout,
         retries,
         rejectInvalidSSL,
+        cache,
       }
     );
 
@@ -88,6 +90,7 @@ describe("The Joodle client class", () => {
     expect(joodle.got.defaults.options.https!.rejectUnauthorized).toBe(
       rejectInvalidSSL
     );
+    expect(joodle.got.defaults.options.cache).toBeInstanceOf(Map);
   });
 
   it("should throw an error if the baseURL is not provided", () => {
