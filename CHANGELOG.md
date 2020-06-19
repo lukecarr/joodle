@@ -1,3 +1,14 @@
+# 0.2.3
+
+### Features
+
+- **client:** support for HTTP caching ([3b5c633](https://github.com/lukecarr/joodle/commit/3b5c633ace62f9e1616dbcfaa88bed0fe25ab123))
+
+### Documentation
+
+- **api:** added better JSDoc documentation ([09f5939](https://github.com/lukecarr/joodle/commit/09f5939ee5e1d904259481d6611ed3b66ceade7a))
+- added changelog to documentation site ([dc27457](https://github.com/lukecarr/joodle/commit/dc27457d37e0c00a1d6736e33f21407311a15d76))
+
 # 0.2.2
 
 ### Features
