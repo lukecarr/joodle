@@ -15,6 +15,10 @@ module.exports = {
         link: "/reference/"
       },
       {
+        text: "Changelog",
+        link: "/changelog.html"
+      },
+      {
         text: "NPM",
         link: "https://www.npmjs.com/package/joodle"
       }
