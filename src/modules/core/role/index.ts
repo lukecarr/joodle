@@ -65,7 +65,7 @@ export default class RoleModule extends Module {
   public async assignRoles(
     ...assignments: RoleAssignment[]
   ): Promise<FunctionResponse> {
-    return (await this.get("core_role_assign_roles", {
+    return (await this.client.invoke("core_role_assign_roles", {
       assignments,
     })) as FunctionResponse;
   }
@@ -83,7 +83,7 @@ export default class RoleModule extends Module {
   public async unassignRoles(
     ...unassignments: RoleAssignment[]
   ): Promise<FunctionResponse> {
-    return (await this.get("core_role_unassign_roles", {
+    return (await this.client.invoke("core_role_unassign_roles", {
       unassignments,
     })) as FunctionResponse;
   }
