@@ -4,8 +4,27 @@
  * title: Client
  * ---
  */
+import qs from "qs";
 import got, { Got } from "got";
 import CacheableRequest from "cacheable-request";
+import { FunctionResponse } from "./functions";
+
+/**
+ * Attempts to handle a JSON body returned by a call to Moodle's Web Services API.
+ * If the body contains an `exception` property, then the response is assumed to
+ * be erroneous, and a rejected Promise is returned.
+ *
+ * @param body A JSON body returned by a Moodle API call.
+ * @since 1.0.0
+ */
+const handleResponse = async (
+  response: FunctionResponse
+): Promise<FunctionResponse> => {
+  if ((response as any).exception) {
+    return Promise.reject(response);
+  }
+  return response;
+};
 
 export interface ClientOptions {
   /**
@@ -124,6 +143,32 @@ export abstract class Client {
         httpOptions && httpOptions.cache !== undefined
           ? httpOptions.cache
           : undefined,
+    });
+  }
+
+  /**
+   * Invokes a Moodle Web Services API function.
+   *
+   * @param {string} wsfunction  The name of the Moodle Web Services API function to invoke.
+   * @param {any} [searchParams] Any additional GET parameters to include in the request.
+   *
+   * @since 1.0.0
+   */
+  public async invoke(
+    wsfunction: string,
+    searchParams?: any
+  ): Promise<FunctionResponse> {
+    const response = await this.got.get("webservice/rest/server.php", {
+      searchParams: qs.stringify({
+        wsfunction,
+        ...searchParams,
+      }),
+      responseType: "json",
+    });
+
+    return handleResponse({
+      getHttpResponse: () => response,
+      ...(response.body as any),
     });
   }
 }

@@ -26,7 +26,7 @@ export default class AuthEmailModule extends Module {
    * @async
    */
   public async getSignUpSettings(): Promise<SignUpSettingsResponse> {
-    return (await this.get(
+    return (await this.client.invoke(
       "auth_email_get_signup_settings"
     )) as SignUpSettingsResponse;
   }
@@ -42,7 +42,7 @@ export default class AuthEmailModule extends Module {
    * @async
    */
   public async signUpUser(user: SignUpUser): Promise<SignUpUserResponse> {
-    return (await this.get("auth_email_signup_user", {
+    return (await this.client.invoke("auth_email_signup_user", {
       ...user,
     })) as SignUpUserResponse;
   }

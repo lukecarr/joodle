@@ -25,7 +25,7 @@ export default class WebServiceModule extends Module {
    * @async
    */
   public async getSiteInfo(): Promise<SiteInfoResponse> {
-    return (await this.get(
+    return (await this.client.invoke(
       "core_webservice_get_site_info"
     )) as SiteInfoResponse;
   }

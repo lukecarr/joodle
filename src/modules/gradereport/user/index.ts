@@ -34,7 +34,7 @@ export default class UserModule extends Module {
     user?: number,
     group?: number
   ): Promise<GetGradeItemsResponse> {
-    return (await this.get("gradereport_user_get_grade_items", {
+    return (await this.client.invoke("gradereport_user_get_grade_items", {
       courseid: course,
       userid: user === undefined ? 0 : user,
       groupid: group === undefined ? 0 : group,

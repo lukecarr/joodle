@@ -43,7 +43,7 @@ export default class UserModule extends Module {
    * @async
    */
   public async agreeSitePolicy(): Promise<SitePolicyAgreementResponse> {
-    return (await this.get(
+    return (await this.client.invoke(
       "core_user_agree_site_policy"
     )) as SitePolicyAgreementResponse;
   }
@@ -61,7 +61,7 @@ export default class UserModule extends Module {
   public async createUsers(
     ...users: (UserProvidedPassword | UserGeneratedPassword)[]
   ): Promise<CreateUsersResponse> {
-    const response = (await this.get("core_user_create_users", {
+    const response = (await this.client.invoke("core_user_create_users", {
       users,
     })) as FunctionResponse;
 
@@ -88,7 +88,7 @@ export default class UserModule extends Module {
    * @async
    */
   public async deleteUsers(...users: number[]): Promise<FunctionResponse> {
-    return (await this.get("core_user_delete_users", {
+    return (await this.client.invoke("core_user_delete_users", {
       userids: users,
     })) as FunctionResponse;
   }
@@ -108,9 +108,12 @@ export default class UserModule extends Module {
   public async getCourseUserProfiles(
     ...users: CourseUser[]
   ): Promise<GetCourseUserProfilesResponse> {
-    const response = (await this.get("core_user_get_course_user_profiles", {
-      userlist: users,
-    })) as FunctionResponse;
+    const response = (await this.client.invoke(
+      "core_user_get_course_user_profiles",
+      {
+        userlist: users,
+      }
+    )) as FunctionResponse;
 
     const profiles: GetCourseUserProfilesResponse = {
       profiles: [],
@@ -138,7 +141,7 @@ export default class UserModule extends Module {
   public async getPrivateFilesInfo(
     user?: number
   ): Promise<GetPrivateFilesInfoResponse> {
-    return (await this.get("core_user_get_private_files_info", {
+    return (await this.client.invoke("core_user_get_private_files_info", {
       userid: user === undefined ? 0 : user,
     })) as GetPrivateFilesInfoResponse;
   }
@@ -160,7 +163,7 @@ export default class UserModule extends Module {
     name?: string,
     user?: number
   ): Promise<GetUserPreferencesResponse> {
-    return (await this.get("core_user_get_user_preferences", {
+    return (await this.client.invoke("core_user_get_user_preferences", {
       name,
       userid: user === undefined ? 0 : user,
     })) as GetUserPreferencesResponse;
@@ -179,7 +182,7 @@ export default class UserModule extends Module {
   public async setUserPreferences(
     ...preferences: NewPreference[]
   ): Promise<SetUserPreferencesResponse> {
-    return (await this.get("core_user_set_user_preferences", {
+    return (await this.client.invoke("core_user_set_user_preferences", {
       preferences,
     })) as SetUserPreferencesResponse;
   }
@@ -198,7 +201,7 @@ export default class UserModule extends Module {
   public async getUsers(
     ...criteria: SearchCriteria[]
   ): Promise<GetUsersResponse> {
-    return (await this.get("core_user_get_users", {
+    return (await this.client.invoke("core_user_get_users", {
       criteria,
     })) as GetUsersResponse;
   }
@@ -220,7 +223,7 @@ export default class UserModule extends Module {
     field: "id" | "idnumber" | "username" | "email",
     ...values: (string | number)[]
   ): Promise<GetUsersByFieldResponse> {
-    const response = (await this.get("core_user_get_users_by_field", {
+    const response = (await this.client.invoke("core_user_get_users_by_field", {
       field,
       values,
     })) as GetUsersByFieldResponse;
@@ -254,7 +257,7 @@ export default class UserModule extends Module {
     draftItemId: number,
     user?: number
   ): Promise<UserPictureResponse> {
-    return (await this.get("core_user_update_picture", {
+    return (await this.client.invoke("core_user_update_picture", {
       draftitemid: draftItemId,
       userid: user === undefined ? 0 : user,
     })) as UserPictureResponse;
@@ -272,7 +275,7 @@ export default class UserModule extends Module {
    * @async
    */
   public async deleteUserPicture(user?: number): Promise<UserPictureResponse> {
-    return (await this.get("core_user_update_picture", {
+    return (await this.client.invoke("core_user_update_picture", {
       draftitemid: 0,
       delete: 1,
       userid: user === undefined ? 0 : user,
