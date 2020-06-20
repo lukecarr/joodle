@@ -67,12 +67,14 @@ describe("The core.webservice module", () => {
   describe("the getSiteInfo() function", () => {
     it("should handle successful responses", () => {
       return expect(
-        joodle.core.webservice.getSiteInfo()
+        joodle.modules.core.webservice.getSiteInfo()
       ).resolves.toBeDefined();
     });
 
     it("should handle erroneous responses", () => {
-      return expect(joodle.core.webservice.getSiteInfo()).rejects.toBeDefined();
+      return expect(
+        joodle.modules.core.webservice.getSiteInfo()
+      ).rejects.toBeDefined();
     });
   });
 });

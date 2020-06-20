@@ -52,13 +52,13 @@ describe("The auth.email module", () => {
   describe("the getSignUpSettings() function", () => {
     it("should handle successful responses", () => {
       return expect(
-        joodle.auth.email.getSignUpSettings()
+        joodle.modules.auth.email.getSignUpSettings()
       ).resolves.toBeDefined();
     });
 
     it("should handle erroneous responses", () => {
       return expect(
-        joodle.auth.email.getSignUpSettings()
+        joodle.modules.auth.email.getSignUpSettings()
       ).rejects.toBeDefined();
     });
   });
@@ -73,11 +73,15 @@ describe("The auth.email module", () => {
     };
 
     it("should handle successful responses", () => {
-      return expect(joodle.auth.email.signUpUser(user)).resolves.toBeDefined();
+      return expect(
+        joodle.modules.auth.email.signUpUser(user)
+      ).resolves.toBeDefined();
     });
 
     it("should handle erroneous responses", () => {
-      return expect(joodle.auth.email.signUpUser(user)).rejects.toBeDefined();
+      return expect(
+        joodle.modules.auth.email.signUpUser(user)
+      ).rejects.toBeDefined();
     });
   });
 });

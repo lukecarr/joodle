@@ -54,7 +54,7 @@ describe("The core.role module", () => {
   describe("the assignRoles() function", () => {
     it("should handle successful responses", () => {
       return expect(
-        joodle.core.role.assignRoles({
+        joodle.modules.core.role.assignRoles({
           roleid: 123,
           userid: 456,
           contextlevel: "block",
@@ -65,7 +65,7 @@ describe("The core.role module", () => {
 
     it("should handle erroneous responses", () => {
       return expect(
-        joodle.core.role.assignRoles({
+        joodle.modules.core.role.assignRoles({
           roleid: 123,
           userid: 456,
           contextlevel: "block",
@@ -78,7 +78,7 @@ describe("The core.role module", () => {
   describe("the unassignRoles() function", () => {
     it("should handle successful responses", () => {
       return expect(
-        joodle.core.role.unassignRoles({
+        joodle.modules.core.role.unassignRoles({
           roleid: 123,
           userid: 456,
           contextlevel: "block",
@@ -89,7 +89,7 @@ describe("The core.role module", () => {
 
     it("should handle erroneous responses", () => {
       return expect(
-        joodle.core.role.unassignRoles({
+        joodle.modules.core.role.unassignRoles({
           roleid: 123,
           userid: 456,
           contextlevel: "block",
