@@ -12,7 +12,7 @@ const client = new Joodle({
   token: "abcdef123456",
 });
 
-client.core.user
+client.modules.core.user
   .getUsersByField("email", "test1@example.com", "test2@example.com")
   .then((users) => console.log(users))
   .catch((error) => console.error(error));
@@ -32,7 +32,7 @@ const client = new Joodle({
 
 (async () => {
   try {
-    const users = await client.core.user.getUsersByField(
+    const users = await client.modules.core.user.getUsersByField(
       "email",
       "test1@example.com",
       "test2@example.com"

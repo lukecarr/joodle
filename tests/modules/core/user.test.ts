@@ -222,11 +222,15 @@ describe("The core.user module", () => {
 
   describe("the agreeSitePolicy() function", () => {
     it("should handle successful responses", async () => {
-      expect((await joodle.core.user.agreeSitePolicy()).status).toBeTruthy();
+      expect(
+        (await joodle.modules.core.user.agreeSitePolicy()).status
+      ).toBeTruthy();
     });
 
     it("should handle erroneous responses", () => {
-      return expect(joodle.core.user.agreeSitePolicy()).rejects.toBeDefined();
+      return expect(
+        joodle.modules.core.user.agreeSitePolicy()
+      ).rejects.toBeDefined();
     });
   });
 
@@ -240,27 +244,29 @@ describe("The core.user module", () => {
     };
 
     it("should handle successful responses", async () => {
-      const { users } = await joodle.core.user.createUsers(input);
+      const { users } = await joodle.modules.core.user.createUsers(input);
       expect(users).toHaveLength(1);
       expect(users[0].id).toEqual(123);
       expect(users[0].username).toEqual(input.username);
     });
 
     it("should handle erroneous responses", () => {
-      return expect(joodle.core.user.createUsers(input)).rejects.toBeDefined();
+      return expect(
+        joodle.modules.core.user.createUsers(input)
+      ).rejects.toBeDefined();
     });
   });
 
   describe("the deleteUsers() function", () => {
     it("should handle successful responses", () => {
       return expect(
-        joodle.core.user.deleteUsers(1, 2, 3)
+        joodle.modules.core.user.deleteUsers(1, 2, 3)
       ).resolves.toBeDefined();
     });
 
     it("should handle erroneous responses", () => {
       return expect(
-        joodle.core.user.deleteUsers(1, 2, 3)
+        joodle.modules.core.user.deleteUsers(1, 2, 3)
       ).rejects.toBeDefined();
     });
   });
@@ -268,7 +274,7 @@ describe("The core.user module", () => {
   describe("the getCourseUserProfiles() function", () => {
     it("should handle successful responses", () => {
       return expect(
-        joodle.core.user.getCourseUserProfiles({
+        joodle.modules.core.user.getCourseUserProfiles({
           userid: 1,
           courseid: 2,
         })
@@ -277,7 +283,7 @@ describe("The core.user module", () => {
 
     it("should handle erroneous responses", () => {
       return expect(
-        joodle.core.user.getCourseUserProfiles({
+        joodle.modules.core.user.getCourseUserProfiles({
           userid: 1,
           courseid: 2,
         })
@@ -288,19 +294,19 @@ describe("The core.user module", () => {
   describe("the getPrivateFilesInfo() function", () => {
     it("should handle successful responses", () => {
       return expect(
-        joodle.core.user.getPrivateFilesInfo(1)
+        joodle.modules.core.user.getPrivateFilesInfo(1)
       ).resolves.toBeDefined();
     });
 
     it("should handle an undefined parameter (defaulting to 0)", () => {
       return expect(
-        joodle.core.user.getPrivateFilesInfo()
+        joodle.modules.core.user.getPrivateFilesInfo()
       ).resolves.toBeDefined();
     });
 
     it("should handle erroneous responses", () => {
       return expect(
-        joodle.core.user.getPrivateFilesInfo()
+        joodle.modules.core.user.getPrivateFilesInfo()
       ).rejects.toBeDefined();
     });
   });
@@ -308,13 +314,13 @@ describe("The core.user module", () => {
   describe("the getUserPreferences() function", () => {
     it("should handle successful responses", () => {
       return expect(
-        joodle.core.user.getUserPreferences("", 1)
+        joodle.modules.core.user.getUserPreferences("", 1)
       ).resolves.toBeDefined();
     });
 
     it("should handle erroneous responses", () => {
       return expect(
-        joodle.core.user.getUserPreferences("", 1)
+        joodle.modules.core.user.getUserPreferences("", 1)
       ).rejects.toBeDefined();
     });
   });
@@ -322,7 +328,7 @@ describe("The core.user module", () => {
   describe("the setUserPreferences() function", () => {
     it("should handle successful responses", () => {
       return expect(
-        joodle.core.user.setUserPreferences({
+        joodle.modules.core.user.setUserPreferences({
           name: "some_preference",
           value: "abc123",
           userid: 1,
@@ -332,7 +338,7 @@ describe("The core.user module", () => {
 
     it("should handle erroneous responses", () => {
       return expect(
-        joodle.core.user.setUserPreferences({
+        joodle.modules.core.user.setUserPreferences({
           name: "some_preference",
           value: "abc123",
           userid: 1,
@@ -343,7 +349,7 @@ describe("The core.user module", () => {
 
   describe("the getUsers() function", () => {
     it("should handle successful responses", async () => {
-      const { users } = await joodle.core.user.getUsers({
+      const { users } = await joodle.modules.core.user.getUsers({
         key: "firstname",
         value: "Test",
       });
@@ -352,7 +358,7 @@ describe("The core.user module", () => {
 
     it("should handle erroneous responses", () => {
       return expect(
-        joodle.core.user.getUsers({
+        joodle.modules.core.user.getUsers({
           key: "firstname",
           value: "Test",
         })
@@ -362,14 +368,14 @@ describe("The core.user module", () => {
 
   describe("the getUsersByField() function", () => {
     it("should handle successful responses", async () => {
-      const { users } = await joodle.core.user.getUsersByField("id", 1);
+      const { users } = await joodle.modules.core.user.getUsersByField("id", 1);
       expect(users).toHaveLength(1);
       expect(users[0].id).toEqual(1);
     });
 
     it("should handle erroneous responses", () => {
       return expect(
-        joodle.core.user.getUsersByField("id", 1)
+        joodle.modules.core.user.getUsersByField("id", 1)
       ).rejects.toBeDefined();
     });
   });
@@ -377,13 +383,13 @@ describe("The core.user module", () => {
   describe("the updateUserPicture() function", () => {
     it("should handle successful responses", async () => {
       return expect(
-        joodle.core.user.updateUserPicture(1, 1)
+        joodle.modules.core.user.updateUserPicture(1, 1)
       ).resolves.toBeDefined();
     });
 
     it("should handle erroneous responses", () => {
       return expect(
-        joodle.core.user.updateUserPicture(1, 1)
+        joodle.modules.core.user.updateUserPicture(1, 1)
       ).rejects.toBeDefined();
     });
   });
@@ -391,13 +397,13 @@ describe("The core.user module", () => {
   describe("the deleteUserPicture() function", () => {
     it("should handle successful responses", async () => {
       return expect(
-        joodle.core.user.deleteUserPicture(1)
+        joodle.modules.core.user.deleteUserPicture(1)
       ).resolves.toBeDefined();
     });
 
     it("should handle erroneous responses", () => {
       return expect(
-        joodle.core.user.deleteUserPicture(1)
+        joodle.modules.core.user.deleteUserPicture(1)
       ).rejects.toBeDefined();
     });
   });

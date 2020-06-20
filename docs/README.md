@@ -26,7 +26,7 @@ const client = new Joodle({
 
 (async () => {
   try {
-    const users = await client.core.user.getUsersByField(
+    const users = await client.modules.core.user.getUsersByField(
       "email",
       "test1@example.com",
       "test2@example.com"

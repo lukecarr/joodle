@@ -28,7 +28,7 @@ describe("The Joodle client class", () => {
       .get(
         `/webservice/rest/server.php?wsfunction=auth_email_get_signup_settings&wstoken=${token}&moodlewsrestformat=json`
       )
-      .twice()
+      .thrice()
       .reply(200, {
         namefields: ["firstname", "lastname"],
         passwordpolicy: "Password must exist!",
@@ -102,16 +102,27 @@ describe("The Joodle client class", () => {
   });
 
   it("should make API calls using the got library", () => {
-    return expect(joodle.auth.email.getSignUpSettings()).resolves.toBeDefined();
+    return expect(
+      joodle.modules.auth.email.getSignUpSettings()
+    ).resolves.toBeDefined();
   });
 
   it("should catch errors returned by Moodle", () => {
-    return expect(joodle.core.webservice.getSiteInfo()).rejects.toBeDefined();
+    return expect(
+      joodle.modules.core.webservice.getSiteInfo()
+    ).rejects.toBeDefined();
   });
 
   it("should expose the raw HTTP response through the getHttpResponse() function", () => {
-    return joodle.auth.email
+    return joodle.modules.auth.email
       .getSignUpSettings()
       .then((response) => expect(response.getHttpResponse()).toBeDefined());
+  });
+
+  it("should expose a method for invoking raw functions", () => {
+    expect(joodle.invoke).toBeInstanceOf(Function);
+    return expect(
+      joodle.invoke("auth_email_get_signup_settings")
+    ).resolves.toBeDefined();
   });
 });

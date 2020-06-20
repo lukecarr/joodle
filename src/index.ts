@@ -9,6 +9,30 @@ import AuthModule from "./modules/auth";
 import CoreModule from "./modules/core";
 import GradeReportModule from "./modules/gradereport";
 
+interface Modules {
+  /**
+   * The module containing functions relating to authentication in Moodle
+   * (specifically self-registration).
+   *
+   * @since 0.1.0
+   */
+  readonly auth: AuthModule;
+
+  /**
+   * The module containing functions relating to core Moodle operations.
+   *
+   * @since 0.2.0
+   */
+  readonly core: CoreModule;
+
+  /**
+   * The module containing functions for grade-related operations.
+   *
+   * @since 0.2.2
+   */
+  readonly gradereport: GradeReportModule;
+}
+
 /**
  * The main Joodle client class. Used to make API calls to Moodle's Web Services
  * API.
@@ -19,26 +43,12 @@ import GradeReportModule from "./modules/gradereport";
 // eslint-disable-next-line import/prefer-default-export
 export class Joodle extends Client {
   /**
-   * The module containing functions relating to authentication in Moodle
-   * (specifically self-registration).
+   * The modules that have been implemented by Joodle. Each module serves as a
+   * container of numerous Moodle Web Services API functions.
    *
-   * @since 0.1.0
+   * @since 1.0.0
    */
-  public readonly auth: AuthModule;
-
-  /**
-   * The module containing functions relating to core Moodle operations.
-   *
-   * @since 0.2.0
-   */
-  public readonly core: CoreModule;
-
-  /**
-   * The module containing functions for grade-related operations.
-   *
-   * @since 0.2.2
-   */
-  public readonly gradereport: GradeReportModule;
+  public readonly modules: Modules;
 
   /**
    * Initializes a new Joodle client instance for making API calls to Moodle's
@@ -52,8 +62,10 @@ export class Joodle extends Client {
   public constructor(options?: ClientOptions, httpOptions?: HttpOptions) {
     super(options, httpOptions);
 
-    this.auth = new AuthModule(this);
-    this.core = new CoreModule(this);
-    this.gradereport = new GradeReportModule(this);
+    this.modules = {
+      auth: new AuthModule(this),
+      core: new CoreModule(this),
+      gradereport: new GradeReportModule(this),
+    };
   }
 }

@@ -67,13 +67,13 @@ describe("The gradereport.user module", () => {
   describe("the getGradeItems() function", () => {
     it("should handle successful responses", () => {
       return expect(
-        joodle.gradereport.user.getGradeItems(123, 1, undefined)
+        joodle.modules.gradereport.user.getGradeItems(123, 1, undefined)
       ).resolves.toBeDefined();
     });
 
     it("should handle erroneous responses", () => {
       return expect(
-        joodle.gradereport.user.getGradeItems(123, 1, undefined)
+        joodle.modules.gradereport.user.getGradeItems(123, 1, undefined)
       ).rejects.toBeDefined();
     });
   });
