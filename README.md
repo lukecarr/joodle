@@ -9,7 +9,7 @@
     <img src="https://img.shields.io/github/license/lukecarr/joodle?color=4a00e0&style=for-the-badge" alt="License" />
   </a>
   <img src="https://img.shields.io/github/package-json/v/lukecarr/joodle/develop?label=Version&style=for-the-badge" alt="Version" />
-  <a href="https://github.com/omnio-interactive/omnio-learn/issues">
+  <a href="https://github.com/lukecarr/joodle/issues">
     <img src="https://img.shields.io/github/issues/lukecarr/joodle?style=for-the-badge" alt="Issues Open" />
   </a>
   <img src="https://img.shields.io/osslifecycle/lukecarr/joodle?style=for-the-badge" alt="OSS Lifecycle" />
