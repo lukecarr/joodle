@@ -57,7 +57,7 @@
     "@commitlint/config-conventional": "^8.3.4",
     "@commitlint/prompt": "^8.3.5",
     "@types/jest": "^26.0.18",
-    "@types/node": "^14.0.4",
+    "@types/node": "^14.14.11",
     "@types/qs": "^6.9.5",
     "@typescript-eslint/eslint-plugin": "^2.34.0",
     "@typescript-eslint/parser": "^2.34.0",
