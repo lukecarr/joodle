@@ -1,6 +1,6 @@
 {
   "name": "joodle",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Moodle Web Service API client for Node.js.",
   "keywords": [
     "moodle",
