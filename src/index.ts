@@ -52,8 +52,7 @@ export class Joodle extends Client {
    * Initializes a new Joodle client instance for making API calls to Moodle's Web Services API.
    *
    * @param {ClientOptions} [options]     The client's configuration options.
-   * @param {HttpOptions}  [httpOptions]  HTTP configuration options to pass
-   *                                      along to `got`.
+   * @param {HttpOptions}  [httpOptions]  HTTP configuration options to pass along to `got`.
    * @since 0.1.0
    */
   public constructor(options?: ClientOptions, httpOptions?: HttpOptions) {
