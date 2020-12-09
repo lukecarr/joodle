@@ -1,0 +1,38 @@
+name: Release
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  Release:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Setup Yarn
+        run: npm i -g yarn
+
+      - name: Install Dependencies
+        run: yarn
+
+      - name: Set NPM Token
+        env:
+          NPM_API_TOKEN: ${{ secrets.NPM_API_TOKEN }}
+        run: echo "//registry.npmjs.org/:_authToken=$NPM_API_TOKEN" >> ~/.npmrc
+
+      - name: Release-it
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: yarn release --ci
