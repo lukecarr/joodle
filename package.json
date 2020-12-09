@@ -57,6 +57,7 @@
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "@commitlint/prompt": "^11.0.0",
+    "@release-it/conventional-changelog": "^2.0.0",
     "@types/jest": "^26.0.18",
     "@types/node": "^14.14.11",
     "@types/qs": "^6.9.5",
