@@ -32,6 +32,9 @@ jobs:
           NPM_API_TOKEN: ${{ secrets.NPM_API_TOKEN }}
         run: echo "//registry.npmjs.org/:_authToken=$NPM_API_TOKEN" >> ~/.npmrc && yarn config set registry https://registry.npmjs.org/
 
+      - name: Set Git Config
+        run: git config --global user.email "me@lukecarr.dev" && git config --global user.name "Luke Carr"
+
       - name: Release-it
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
