@@ -68,6 +68,12 @@ export interface HttpOptions {
    * HTTP headers to revalidate stale cache entries.
    */
   cache?: string | false | CacheableRequest.StorageAdapter;
+
+  /**
+   * If set to true, Joodle will additionally accept HTTP/2 requests. HTTP/1.1 or HTTP/2 will be used depending on the
+   * ALPN protocol.
+   */
+  http2?: boolean;
 }
 
 /**
@@ -134,6 +140,10 @@ export abstract class Client {
         httpOptions && httpOptions.cache !== undefined
           ? httpOptions.cache
           : undefined,
+      http2:
+        httpOptions && httpOptions.http2 !== undefined
+          ? httpOptions.http2
+          : false,
     });
   }
 
