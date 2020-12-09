@@ -64,8 +64,6 @@
     "@typescript-eslint/eslint-plugin": "^4.9.1",
     "@typescript-eslint/parser": "^4.9.1",
     "codecov": "^3.8.1",
-    "commitizen": "^4.2.2",
-    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.15.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^7.0.0",
@@ -90,10 +88,5 @@
     "cacheable-request": "^7.0.1",
     "got": "^11.8.0",
     "qs": "^6.9.4"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   }
 }
