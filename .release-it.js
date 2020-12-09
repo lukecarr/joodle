@@ -4,5 +4,8 @@ module.exports = {
       "preset": "conventionalcommits",
       "infile": "CHANGELOG.md"
     }
+  },
+  "github": {
+    "release": true
   }
 }
