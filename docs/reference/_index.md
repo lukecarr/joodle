@@ -21,5 +21,5 @@ Initializes a new Joodle client instance for making API calls to Moodle's Web Se
 | Param | Type | Description |
 | --- | --- | --- |
 | [options] | <code>ClientOptions</code> | The client's configuration options. |
-| [httpOptions] | <code>HttpOptions</code> | HTTP configuration options to pass                                      along to `got`. |
+| [httpOptions] | <code>HttpOptions</code> | HTTP configuration options to pass along to `got`. |
 
