@@ -32,6 +32,6 @@ jobs:
         run: yarn
 
       - name: Run Linter
-        run: yarn lint
+        run: yarn lint:check
         env:
           CI: true
