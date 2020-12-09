@@ -147,7 +147,9 @@ export abstract class Client {
    */
   public async invoke(
     wsfunction: string,
-    searchParams?: any
+    searchParams?: {
+      [key: string]: any;
+    }
   ): Promise<FunctionResponse> {
     const response = await this.got.get("webservice/rest/server.php", {
       searchParams: qs.stringify({
