@@ -6,9 +6,13 @@ module.exports = {
     }
   },
   "github": {
-    "release": true
+    "release": true,
+    "releaseName": "v${version}"
   },
   "npm": {
     "skipChecks": true
+  },
+  "git": {
+    "commitMessage": "chore(release): v${version}",
   }
 }
