@@ -4,7 +4,7 @@ import { Warning } from "../../shared";
 export interface SitePolicyAgreementResponse extends FunctionResponse {
   /**
    * Whether the agreement was processed
-   * successfuly (true) or not (false).
+   * successfully (true) or not (false).
    */
   status: boolean;
 

@@ -188,7 +188,7 @@ export default class UserModule extends Module {
   }
 
   /**
-   * Searches for users on the Moodle site that match the provided crtieria.
+   * Searches for users on the Moodle site that match the provided criteria.
    *
    * @param {SearchCriteria[]} criteria The search criteria used to search for
    *                                    users.

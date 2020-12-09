@@ -89,14 +89,14 @@ export abstract class Client {
    *
    * @since 0.1.0
    */
-  private baseURL?: string;
+  private readonly baseURL?: string;
 
   /**
    * The token used to authenticate with Moodle's Web Services API.
    *
    * @since 0.1.0
    */
-  private token?: string;
+  private readonly token?: string;
 
   /**
    * The underlying got instance used for HTTP requests.
@@ -114,7 +114,7 @@ export abstract class Client {
    *                                      along to `got`.
    * @since 0.1.0
    */
-  public constructor(options?: ClientOptions, httpOptions?: HttpOptions) {
+  protected constructor(options?: ClientOptions, httpOptions?: HttpOptions) {
     this.baseURL = (options && options.baseURL) || process.env.JOODLE_BASE_URL;
     this.token = (options && options.token) || process.env.JOODLE_TOKEN;
 

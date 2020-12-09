@@ -105,7 +105,7 @@ export interface Grade {
   gradeislocked?: boolean;
 
   /**
-   * Whether the grade is overriden
+   * Whether the grade is overridden
    * (true) or not (false).
    */
   gradeisoverriden?: boolean;
