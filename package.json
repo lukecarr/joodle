@@ -73,7 +73,7 @@
     "jest": "^26.6.3",
     "jsdoc-babel": "^0.5.0",
     "jsdoc-to-markdown": "^6.0.1",
-    "nock": "^12.0.3",
+    "nock": "^13.0.5",
     "prettier": "^2.0.5",
     "rimraf": "^3.0.2",
     "ts-jest": "^26.0.0",
