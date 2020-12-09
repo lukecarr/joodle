@@ -43,6 +43,7 @@
     "build:types": "tsc --emitDeclarationOnly",
     "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
     "build": "yarn build:clean && yarn build:types && yarn build:js",
+    "release": "release-it",
     "prepublishOnly": "yarn lint:check && yarn test && yarn build"
   },
   "devDependencies": {
@@ -75,6 +76,7 @@
     "jsdoc-to-markdown": "^6.0.1",
     "nock": "^13.0.5",
     "prettier": "^2.2.1",
+    "release-it": "^14.2.2",
     "rimraf": "^3.0.2",
     "ts-jest": "^26.4.4",
     "ts-node": "^9.1.1",
