@@ -36,8 +36,7 @@ export default class UserModule extends Module {
   /**
    * Agrees to the Moodle site policy for the current web service user.
    *
-   * @returns {Promise<SitePolicyAgreementResponse>} The response returned
-   *                                                 by Moodle.
+   * @returns {Promise<SitePolicyAgreementResponse>} The response returned by Moodle.
    *
    * @since 0.2.0
    * @async
@@ -96,11 +95,9 @@ export default class UserModule extends Module {
   /**
    * Gets the course profiles for users.
    *
-   * @param {CourseUser[]} users The users (comprising of user ID and course ID)
-   *                             to lookup.
+   * @param {CourseUser[]} users The users (comprising of user ID and course ID) to lookup.
    *
-   * @returns {Promise<GetCourseUserProfilesResponse>} The response returned by
-   *                                                   Moodle.
+   * @returns {Promise<GetCourseUserProfilesResponse>} The response returned by Moodle.
    *
    * @since 0.2.0
    * @async
@@ -130,8 +127,8 @@ export default class UserModule extends Module {
   /**
    * Returns general information about files in a user's private files area.
    *
-   * @param {number} [user] The ID of the user to lookup file info on. If none is provided,
-   *                        the ID of the web service user is used.
+   * @param {number} [user] The ID of the user to lookup file info on. If none is provided, the ID of the web service
+   *                        user is used.
    *
    * @returns {Promise<GetPrivateFilesInfoResponse>} The response returned by Moodle.
    *
@@ -149,10 +146,9 @@ export default class UserModule extends Module {
   /**
    * Returns user preferences for a Moodle user.
    *
-   * @param {string} [name] The name of the preference to lookup. If none is provided, all
-   *                        preferences are returned.
-   * @param {number} [user] The ID of the user to lookup preferences for. If none is provided,
-   *                        the ID of the web service user is used.
+   * @param {string} [name] The name of the preference to lookup. If none is provided, all preferences are returned.
+   * @param {number} [user] The ID of the user to lookup preferences for. If none is provided, the ID of the web service
+   *                        user is used.
    *
    * @returns {Promise<GetUserPreferencesResponse>} The response returned by Moodle.
    *

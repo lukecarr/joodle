@@ -53,32 +53,27 @@ interface ProfileField {
   sortorder?: number;
 
   /**
-   * Whether the field is required (1)
-   * or not (0).
+   * Whether the field is required (1) or not (0).
    */
   required?: number;
 
   /**
-   * Whether the field is locked (1)
-   * or not (0).
+   * Whether the field is locked (1) or not (0).
    */
   locked?: number;
 
   /**
-   * Whether the field is visible (1)
-   * or not (0).
+   * Whether the field is visible (1) or not (0).
    */
   visible?: number;
 
   /**
-   * @todo Add documentation. Moodle's
-   * documentation is not helpful.
+   * @todo Add documentation. Moodle's documentation is not helpful.
    */
   forceunique?: number;
 
   /**
-   * @todo Add documentation. Moodle's
-   * documentation is not helpful.
+   * @todo Add documentation. Moodle's documentation is not helpful.
    */
   signup?: number;
 
@@ -98,46 +93,39 @@ interface ProfileField {
   defaultdataformat?: number;
 
   /**
-   * @todo Add documentation. Moodle's
-   * documentation is not helpful.
+   * @todo Add documentation. Moodle's documentation is not helpful.
    */
   param1?: string;
 
   /**
-   * @todo Add documentation. Moodle's
-   * documentation is not helpful.
+   * @todo Add documentation. Moodle's documentation is not helpful.
    */
   param2?: string;
 
   /**
-   * @todo Add documentation. Moodle's
-   * documentation is not helpful.
+   * @todo Add documentation. Moodle's documentation is not helpful.
    */
   param3?: string;
 
   /**
-   * @todo Add documentation. Moodle's
-   * documentation is not helpful.
+   * @todo Add documentation. Moodle's documentation is not helpful.
    */
   param4?: string;
 
   /**
-   * @todo Add documentation. Moodle's
-   * documentation is not helpful.
+   * @todo Add documentation. Moodle's documentation is not helpful.
    */
   param5?: string;
 }
 
 export interface SignUpSettingsResponse extends FunctionResponse {
   /**
-   * The fields that a user can provide during sign
-   * up to identify their name.
+   * The fields that a user can provide during sign up to identify their name.
    */
   namefields: string[];
 
   /**
-   * Users signing up to this Moodle site must use
-   * a password that meets this policy's requirements.
+   * Users signing up to this Moodle site must use a password that meets this policy's requirements.
    */
   passwordpolicy?: string;
 
@@ -162,8 +150,7 @@ export interface SignUpSettingsResponse extends FunctionResponse {
   country?: string;
 
   /**
-   * Required profile fields that the user must
-   * provide when signing up.
+   * Required profile fields that the user must provide when signing up.
    */
   profilefields?: ProfileField[];
 
@@ -183,8 +170,7 @@ export interface SignUpSettingsResponse extends FunctionResponse {
   recaptchachallengeimage?: string;
 
   /**
-   * The URL Of the site's Google reCAPTCHA
-   * challenge JS.
+   * The URL Of the site's Google reCAPTCHA challenge JS.
    */
   recaptchachallengejs?: string;
 

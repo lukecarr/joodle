@@ -8,8 +8,7 @@ interface User {
   username: string;
 
   /**
-   * The user's authentication plugin,
-   * such as `manual` or `ldap`.
+   * The user's authentication plugin, such as `manual` or `ldap`.
    */
   auth?: string;
 
@@ -24,18 +23,14 @@ interface User {
   lastname: string;
 
   /**
-   * The user's email address. This should
-   * be unique (not in use by an existing
-   * user).
+   * The user's email address. This should be unique (not in use by an existing user).
    */
   email: string;
 
   /**
    * Email display.
    *
-   * @todo Better documentation. This
-   * explanation is pulled from Moodle's
-   * documentation.
+   * @todo Better documentation. This explanation is pulled from Moodle's documentation.
    */
   maildisplay?: number;
 
@@ -50,14 +45,12 @@ interface User {
   country?: string;
 
   /**
-   * The user's user-specific timezone. A
-   * value of `"99"` denotes the site default.
+   * The user's user-specific timezone. A value of `"99"` denotes the site default.
    */
   timezone?: string;
 
   /**
-   * The user's profile description (without
-   * HTML).
+   * The user's profile description (without HTML).
    */
   description?: string;
 
@@ -117,13 +110,12 @@ interface User {
   msn?: string;
 
   /**
-   * An arbitrary ID number for the user (sometimes
-   * from their institution).
+   * An arbitrary ID number for the user (sometimes from their institution).
    */
   idnumber?: string;
 
   /**
-   * The user's instituion.
+   * The user's institution.
    */
   institution?: string;
 
@@ -148,26 +140,22 @@ interface User {
   address?: string;
 
   /**
-   * The user's user-specific language, such as
-   * `en` or `en_ar` (pirate language).
+   * The user's user-specific language, such as `en` or `en_ar` (pirate language).
    */
   lang?: string;
 
   /**
-   * The user's user-specific calendar type,
-   * such as `gregorian`.
+   * The user's user-specific calendar type, such as `gregorian`.
    */
   calendartype?: string;
 
   /**
-   * The name of the user's user-specific
-   * Moodle theme.
+   * The name of the user's user-specific Moodle theme.
    */
   theme?: string;
 
   /**
-   * The user's mail format code. A value of 0
-   * denotes plain text, and 1 denotes HTML.
+   * The user's mail format code. A value of 0 denotes plain text, and 1 denotes HTML.
    */
   mailformat?: number;
 
@@ -191,9 +179,7 @@ export interface UserProvidedPassword extends User {
 
 export interface UserGeneratedPassword extends User {
   /**
-   * Whether the user's password should
-   * be generated and mailed to them
-   * (true) or not (false).
+   * Whether the user's password should be generated and mailed to them (true) or not (false).
    */
   createpassword: true;
 }
@@ -212,8 +198,7 @@ interface CreatedUser {
 
 export interface CreateUsersResponse extends FunctionResponse {
   /**
-   * The array of users created as a result
-   * of this function call.
+   * The array of users created as a result of this function call.
    */
   users: CreatedUser[];
 }

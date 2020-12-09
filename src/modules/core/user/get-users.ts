@@ -3,8 +3,7 @@ import { User, Warning } from "../../shared";
 
 export interface SearchCriteria {
   /**
-   * The name of the field used to search
-   * for users.
+   * The name of the field used to search for users.
    */
   key:
     | "id"
@@ -16,16 +15,14 @@ export interface SearchCriteria {
     | "auth";
 
   /**
-   * The field value to match when searching
-   * for users.
+   * The field value to match when searching for users.
    */
   value: string | number;
 }
 
 export interface GetUsersResponse extends FunctionResponse {
   /**
-   * The array of users that match the provided search
-   * criteria.
+   * The array of users that match the provided search criteria.
    */
   users: User[];
 

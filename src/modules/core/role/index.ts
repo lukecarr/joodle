@@ -9,26 +9,22 @@ import { FunctionResponse } from "../../../functions";
 
 interface RoleAssignment {
   /**
-   * The ID of the role to assign
-   * to the user.
+   * The ID of the role to assign to the user.
    */
   roleid: number;
 
   /**
-   * The ID of the user to assign
-   * the role to.
+   * The ID of the user to assign the role to.
    */
   userid: number;
 
   /**
-   * The context to assign the user
-   * role in.
+   * The context to assign the user role in.
    */
   contextid?: number;
 
   /**
-   * The context level to assign the
-   * user role in.
+   * The context level to assign the user role in.
    */
   contextlevel?:
     | "block"
@@ -39,8 +35,7 @@ interface RoleAssignment {
     | "module";
 
   /**
-   * The ID of the instance where the
-   * role needs to be assigned.
+   * The ID of the instance where the role needs to be assigned.
    */
   instanceid?: number;
 }

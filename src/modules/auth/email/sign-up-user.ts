@@ -40,9 +40,7 @@ export interface SignUpUser {
   lastname: string;
 
   /**
-   * The user's email address. This should
-   * be unique (not in use by an existing
-   * user).
+   * The user's email address. This should be unique (not in use by an existing user).
    */
   email: string;
 
@@ -72,16 +70,14 @@ export interface SignUpUser {
   customprofilefields?: ProfileField[];
 
   /**
-   * The Moodle site URL to redirect the user
-   * to after confirmation.
+   * The Moodle site URL to redirect the user to after confirmation.
    */
   redirect?: string;
 }
 
 export interface SignUpUserResponse extends FunctionResponse {
   /**
-   * Whether the user was created (1) or
-   * not (0).
+   * Whether the user was created (1) or not (0).
    */
   success: number;
 
