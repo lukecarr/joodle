@@ -1,7 +1,6 @@
 export interface CustomField {
   /**
-   * The type of field (such as text field
-   * or checkbox).
+   * The type of field (such as text field or checkbox).
    */
   type: string;
 
@@ -115,8 +114,7 @@ export interface User {
   institution?: string;
 
   /**
-   * An arbitrary ID number for the user (sometimes
-   * from their institution).
+   * An arbitrary ID number for the user (sometimes from their institution).
    */
   idnumber?: string;
 
@@ -126,65 +124,55 @@ export interface User {
   interests?: string;
 
   /**
-   * The UNIX timestamp of the first time the user
-   * accessed the Moodle site. This value is 0 if
-   * the user has never accessed the site.
+   * The UNIX timestamp of the first time the user accessed the Moodle site. This value is 0 if the user has never
+   * accessed the site.
    */
   firstaccess?: number;
 
   /**
-   * The UNIX timestamp of the last time the user
-   * accessed the Moodle site. This value is 0 if
-   * the user has never accessed the site.
+   * The UNIX timestamp of the last time the user accessed the Moodle site. This value is 0 if the user has never
+   * accessed the site.
    */
   lastaccess?: number;
 
   /**
-   * The authentication plugin this user uses,
-   * such as `manual` or `ldap`.
+   * The authentication plugin this user uses, such as `manual` or `ldap`.
    */
   auth?: string;
 
   /**
-   * Whether the user's Moodle account is
-   * suspended (true) or not (false). A suspended
-   * user is prevented from signing in to Moodle.
+   * Whether the user's Moodle account is suspended (true) or not (false). A suspended user is prevented from signing
+   * in to Moodle.
    */
   suspended?: boolean;
 
   /**
-   * Whether the user's Moodle account is
-   * confirmed (true) or not (false).
+   * Whether the user's Moodle account is confirmed (true) or not (false).
    */
   confirmed?: boolean;
 
   /**
-   * The user's user-specific language, such as
-   * `en` or `en_ar` (pirate language).
+   * The user's user-specific language, such as `en` or `en_ar` (pirate language).
    */
   lang?: string;
 
   /**
-   * The user's user-specific calendar type,
-   * such as `gregorian`.
+   * The user's user-specific calendar type, such as `gregorian`.
    */
   calendartype?: string;
 
   /**
-   * The name of the user's user-specific
-   * Moodle theme.
+   * The name of the user's user-specific Moodle theme.
    */
   theme?: string;
 
   /**
-   * The user's user-specific timezone. A
-   * value of `"99"` denotes the site default.
+   * The user's user-specific timezone. A value of `"99"` denotes the site default.
    */
   timezone?: string;
 
   /**
-   * The user's mail format code. A value of 0
-   * denotes plain text, and 1 denotes HTML.
+   * The user's mail format code. A value of 0 denotes plain text, and 1 denotes HTML.
    */
   mailformat?: number;
 
@@ -214,20 +202,17 @@ export interface User {
   url?: string;
 
   /**
-   * The user's home country (provided as a
-   * country code, such as `GB` or `AU`).
+   * The user's home country (provided as a country code, such as `GB` or `AU`).
    */
   country?: string;
 
   /**
-   * The URL of the user's Moodle profile
-   * image (small size).
+   * The URL of the user's Moodle profile image (small size).
    */
   profileimageurlsmall: string;
 
   /**
-   * The URL of the user's Moodle profile
-   * image.
+   * The URL of the user's Moodle profile image.
    */
   profileimageurl: string;
 

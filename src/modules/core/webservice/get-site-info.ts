@@ -31,38 +31,32 @@ export interface SiteInfoResponse extends FunctionResponse {
   sitename: string;
 
   /**
-   * The username of the web service user making the
-   * API request.
+   * The username of the web service user making the API request.
    */
   username: string;
 
   /**
-   * The first name of the web service user making
-   * the API request.
+   * The first name of the web service user making the API request.
    */
   firstname: string;
 
   /**
-   * The last name of the web service user making
-   * the API request.
+   * The last name of the web service user making the API request.
    */
   lastname: string;
 
   /**
-   * The full name of the web service user making
-   * the API request.
+   * The full name of the web service user making the API request.
    */
   fullname: string;
 
   /**
-   * The preferred language of the web service user
-   * making the API request.
+   * The preferred language of the web service user making the API request.
    */
   lang: string;
 
   /**
-   * The unique identifier of the web service user
-   * making the API request.
+   * The unique identifier of the web service user making the API request.
    */
   userid: number;
 
@@ -72,39 +66,32 @@ export interface SiteInfoResponse extends FunctionResponse {
   siteurl: string;
 
   /**
-   * The avatar/user picture URL of the web service
-   * user making the API request.
+   * The avatar/user picture URL of the web service user making the API request.
    */
   userpictureurl: string;
 
   /**
-   * The web service functions that the web service
-   * user making the API request is authorized to
-   * call.
+   * The web service functions that the web service user making the API request is authorized to call.
    */
   functions: WebServiceFunction[];
 
   /**
-   * Whether the user is allowed to download files
-   * (1) or not (0).
+   * Whether the user is allowed to download files (1) or not (0).
    */
   downloadfiles: number;
 
   /**
-   * Whether the user is allowed to upload files (1)
-   * or not (0).
+   * Whether the user is allowed to upload files (1) or not (0).
    */
   uploadfiles: number;
 
   /**
-   * The Moodle release currently installed on the
-   * site.
+   * The Moodle release currently installed on the site.
    */
   release: string;
 
   /**
-   * The Moodle version currently installed on the
-   * site.
+   * The Moodle version currently installed on the site.
    */
   version: string;
 
@@ -114,40 +101,33 @@ export interface SiteInfoResponse extends FunctionResponse {
   mobilecssurl: string;
 
   /**
-   * Advanced Moodle site features (and whether
-   * they are currently enabled or not).
+   * Advanced Moodle site features (and whether they are currently enabled or not).
    */
   advancedfeatures: AdvancedFeature[];
 
   /**
-   * Whether the user can manage their own files
-   * (true) or not (false).
+   * Whether the user can manage their own files (true) or not (false).
    */
   usercanmanageownfiles: boolean;
 
   /**
-   * User quota in bytes. A value of 0 means the
-   * user can ignore the quota.
+   * User quota in bytes. A value of 0 means the user can ignore the quota.
    */
   userquota: number;
 
   /**
-   * The maximum file size (in bytes) that the
-   * user is permitted to upload. A value of -1
-   * means the user can upload files of any size.
+   * The maximum file size (in bytes) that the user is permitted to upload. A value of -1 means the user can upload
+   * files of any size.
    */
   usermaxuploadfilesize: number;
 
   /**
-   * The user's default homepage. A value of 0
-   * represents the site's homepage, and 1
-   * represents the dashboard page.
+   * The user's default homepage. A value of 0 represents the site's homepage, and 1 represents the dashboard page.
    */
   userhomepage: number;
 
   /**
-   * The user's private access key used for
-   * fetching files from Moodle.
+   * The user's private access key used for fetching files from Moodle.
    */
   userprivateaccesskey: string;
 
@@ -157,27 +137,22 @@ export interface SiteInfoResponse extends FunctionResponse {
   siteid: number;
 
   /**
-   * The global calendar type of the Moodle
-   * site.
+   * The global calendar type of the Moodle site.
    */
   sitecalendartype: string;
 
   /**
-   * The personal calendar type of the web
-   * service user making the API request.
+   * The personal calendar type of the web service user making the API request.
    */
   usercalendartype: string;
 
   /**
-   * Whether the web service user making the
-   * API request is a site admin (true) or
-   * not (false).
+   * Whether the web service user making the API request is a site admin (true) or not (false).
    */
   userissiteadmin: boolean;
 
   /**
-   * The name of the Moodle theme currently
-   * installed on the site.
+   * The name of the Moodle theme currently installed on the site.
    */
   theme: string;
 }

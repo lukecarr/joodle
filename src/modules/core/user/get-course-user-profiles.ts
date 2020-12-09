@@ -91,8 +91,7 @@ interface CourseUserProfile extends User {
   roles?: UserRole[];
 
   /**
-   * The courses that the user is
-   * enrolled in.
+   * The courses that the user is enrolled in.
    */
   enrolledcourses?: EnrolledCourse[];
 }

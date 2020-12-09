@@ -11,8 +11,7 @@ import GradeReportModule from "./modules/gradereport";
 
 interface Modules {
   /**
-   * The module containing functions relating to authentication in Moodle
-   * (specifically self-registration).
+   * The module containing functions relating to authentication in Moodle (specifically self-registration).
    *
    * @since 0.1.0
    */
@@ -34,8 +33,7 @@ interface Modules {
 }
 
 /**
- * The main Joodle client class. Used to make API calls to Moodle's Web Services
- * API.
+ * The main Joodle client class. Used to make API calls to Moodle's Web Services API.
  *
  * @since 0.1.0
  * @extends Client
@@ -43,16 +41,15 @@ interface Modules {
 // eslint-disable-next-line import/prefer-default-export
 export class Joodle extends Client {
   /**
-   * The modules that have been implemented by Joodle. Each module serves as a
-   * container of numerous Moodle Web Services API functions.
+   * The modules that have been implemented by Joodle. Each module serves as a container of numerous Moodle Web
+   * Services API functions.
    *
    * @since 1.0.0
    */
   public readonly modules: Modules;
 
   /**
-   * Initializes a new Joodle client instance for making API calls to Moodle's
-   * Web Services API.
+   * Initializes a new Joodle client instance for making API calls to Moodle's Web Services API.
    *
    * @param {ClientOptions} [options]     The client's configuration options.
    * @param {HttpOptions}  [httpOptions]  HTTP configuration options to pass

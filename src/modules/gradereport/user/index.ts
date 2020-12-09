@@ -17,8 +17,7 @@ export default class UserModule extends Module {
   /**
    * Returns the complete list of grade items for users in a course.
    *
-   * Leaving the `user` and `group` parameters undefined will load the grade
-   * items for all users in the course.
+   * Leaving the `user` and `group` parameters undefined will load the grade items for all users in the course.
    *
    * @param {number} course  The ID of the course to obtain grade items for.
    * @param {number} [user]  The ID of the user to obtain grade items for.
