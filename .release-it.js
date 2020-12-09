@@ -7,5 +7,8 @@ module.exports = {
   },
   "github": {
     "release": true
+  },
+  "npm": {
+    "skipChecks": true
   }
 }
