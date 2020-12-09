@@ -29,10 +29,9 @@
     "url": "git+https://github.com/lukecarr/joodle.git"
   },
   "scripts": {
-    "dev": "ts-node src/sandbox.ts",
     "docs:jsdoc": "vuepress-jsdoc --source ./src --dist ./docs --folder reference --title \"API Reference\" -c ./jsdoc.json",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
+    "docs:build": "yarn docs:jsdoc && vuepress build docs",
     "lint:eslint": "eslint \"src/**\" \"tests/**\"",
     "lint:prettier": "prettier *.md **/*.md *.json **/*.yml",
     "lint:check": "yarn lint:eslint && yarn lint:prettier --check",
@@ -57,8 +56,6 @@
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "@commitlint/prompt": "^8.3.5",
-    "@semantic-release/changelog": "^5.0.1",
-    "@semantic-release/git": "^9.0.0",
     "@types/jest": "^25.2.3",
     "@types/node": "^14.0.4",
     "@types/qs": "^6.9.3",
@@ -79,7 +76,6 @@
     "nock": "^12.0.3",
     "prettier": "^2.0.5",
     "rimraf": "^3.0.2",
-    "semantic-release": "^17.0.7",
     "ts-jest": "^26.0.0",
     "ts-node": "^8.10.1",
     "typescript": "^3.9.3",
