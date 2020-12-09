@@ -25,7 +25,7 @@ export default class CoreModule extends Module {
   public readonly webservice: WebServiceModule;
 
   /**
-   * The module containg functions for user-related actions.
+   * The module containing functions for user-related actions.
    *
    * @since 0.2.0
    */

@@ -25,7 +25,7 @@ export interface SearchCriteria {
 export interface GetUsersResponse extends FunctionResponse {
   /**
    * The array of users that match the provided search
-   * crtieria.
+   * criteria.
    */
   users: User[];
 

@@ -110,7 +110,7 @@ export interface User {
   department?: string;
 
   /**
-   * The user's instituion.
+   * The user's institution.
    */
   institution?: string;
 

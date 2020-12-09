@@ -4,7 +4,7 @@ import { User } from "../../shared";
 export interface GetUsersByFieldResponse extends FunctionResponse {
   /**
    * The array of users that match the provided field
-   * crtieria.
+   * criteria.
    */
   users: User[];
 }
