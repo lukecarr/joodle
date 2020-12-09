@@ -14,7 +14,7 @@ import { FunctionResponse } from "./functions";
  * If the body contains an `exception` property, then the response is assumed to
  * be erroneous, and a rejected Promise is returned.
  *
- * @param body A JSON body returned by a Moodle API call.
+ * @param response The response returned by a Moodle API call.
  * @since 1.0.0
  */
 const handleResponse = async (
