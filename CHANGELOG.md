@@ -1,3 +1,43 @@
+# 1.0.0
+
+### ⚠ BREAKING CHANGES
+* **client:** References to modules need to be tweaked (`joodle.core.user.getUsers()` now
+becomes `joodle.modules.core.user.getUsers()`).
+### Features
+* **auth.email:** added response typings to getSignUpSettings() ([9c47b9e](https://github.com/lukecarr/joodle/commit/9c47b9e2eaba02c95a85819adc9857eda6086b78))
+* **client:** exposed method for making raw function requests ([f8912ed](https://github.com/lukecarr/joodle/commit/f8912ed4f66448e2eb3b54993fbf4f9dbd8eec57))
+* **client:** exposed several HTTP options for configuration ([81e8219](https://github.com/lukecarr/joodle/commit/81e8219099944e1ffab281dc11f419349b869e73))
+* **client:** support for HTTP caching ([e2ad0c9](https://github.com/lukecarr/joodle/commit/e2ad0c94e553061bd74044eaf1f1b2386f05b5dc))
+* **modules:** added auth_email_signup_user function ([3f3153b](https://github.com/lukecarr/joodle/commit/3f3153b8ef48208e7b4a8c2136e72806b4ebfb92))
+* **modules:** added core_user_agree_site_policy function ([d370a3a](https://github.com/lukecarr/joodle/commit/d370a3a8a20a411d2da41d0f2a8745abf7474a3c))
+* **modules:** added core_user_create_users function ([9abbbe5](https://github.com/lukecarr/joodle/commit/9abbbe5546226c43243a879b06553a0f9ba31da6))
+* **modules:** added core_user_delete_users function ([b36a1ab](https://github.com/lukecarr/joodle/commit/b36a1ab012592d4a6652f3d1bc4928f520b9c56e))
+* **modules:** added core_user_get_course_user_profiles function ([d61b75c](https://github.com/lukecarr/joodle/commit/d61b75c888b08cb463ba787d921ec184b0e90630))
+* **modules:** added core_user_get_private_files_info function ([b4aee89](https://github.com/lukecarr/joodle/commit/b4aee890155841763ccd67a9cdd1048fc4356eeb))
+* **modules:** added core_user_get_user_preferences function ([4682a11](https://github.com/lukecarr/joodle/commit/4682a11547fe3174f3b732bab50a4e518d7465e5))
+* **modules:** added core_user_set_user_preferences function ([2f7f08a](https://github.com/lukecarr/joodle/commit/2f7f08a7f993df70106fd431dddbf412f95257d1))
+* **modules:** added core_user_update_picture function (and delete) ([458f0a5](https://github.com/lukecarr/joodle/commit/458f0a5bec3a13d8d227bd070754ac6a68a1d7da))
+* **modules:** added fields to auth_email_get_signup_settings response ([8a02d2b](https://github.com/lukecarr/joodle/commit/8a02d2b190b6c0c5b6404b54b9fd63917c5828af))
+* **modules:** added getHttpResponse() to get raw HTTP response ([0d9acfd](https://github.com/lukecarr/joodle/commit/0d9acfd21216ca99766c38f877e2a250c96a8200))
+* **modules:** added gradereport_user_get_grade_items function ([b24cb85](https://github.com/lukecarr/joodle/commit/b24cb8557631595102e7fb37a9518dbd23401d14))
+* **modules:** added roles module (w/ assign and unassign functions) ([336719e](https://github.com/lukecarr/joodle/commit/336719e1a1d7948b556f6f7b9e795ef846ed03e5))
+* **modules:** started work on core.user module ([a8299eb](https://github.com/lukecarr/joodle/commit/a8299eb5b8ded5a550d21c2b9b7911bda061c214))
+* client options can now be provided through environment variables ([d8e1678](https://github.com/lukecarr/joodle/commit/d8e16786dc0340d8b37f8a6c983f14c595e5bc72))
+* **webservice:** started work on webservice module (with site info) ([dc7063e](https://github.com/lukecarr/joodle/commit/dc7063e4554978ce90de51fef7f02c0599a2a222))
+* initial release ([af804fa](https://github.com/lukecarr/joodle/commit/af804fa7031fb170133d353979573b93e6307fcb))
+
+### Bug Fixes
+* **got:** deprecation issue with rejectUnauthorized HTTP option ([4034f76](https://github.com/lukecarr/joodle/commit/4034f76821f59337b44114eadb05f00de2513eac))
+* **modules:** getUsers and getUsersByField allowed invalid fields ([f0af27f](https://github.com/lukecarr/joodle/commit/f0af27fc577ca6d9e47bc7c63eb4e9f59bde7c27))
+* changed from export default to export in main file ([4f40240](https://github.com/lukecarr/joodle/commit/4f40240677ef222174c311d1136aca6a9b31bf97))
+* **babel:** missing @babel/runtime dependency ([9c9c5e9](https://github.com/lukecarr/joodle/commit/9c9c5e91cff9753c67ab2fb825232664fdfa88e0))
+
+### Performance Improvements
+* **npm:** removed unused NPM dependency ([ae41d83](https://github.com/lukecarr/joodle/commit/ae41d8310e9f7e56aca03f1131ac3e7d24979450))
+
+### Code Refactoring
+* **client:** tidied up Joodle class by encapsulating modules ([c9ba591](https://github.com/lukecarr/joodle/commit/c9ba59157bb16c1d3094a0a5ecf4383e9186f829))
+
 # 0.2.3
 
 ### Features
