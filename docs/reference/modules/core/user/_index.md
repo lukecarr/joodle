@@ -32,8 +32,7 @@ Functions for user-related actions.
 Agrees to the Moodle site policy for the current web service user.
 
 **Kind**: instance method of [<code>UserModule</code>](#UserModule)  
-**Returns**: <code>Promise.&lt;SitePolicyAgreementResponse&gt;</code> - The response returned
-                                                by Moodle.  
+**Returns**: <code>Promise.&lt;SitePolicyAgreementResponse&gt;</code> - The response returned by Moodle.  
 **Since**: 0.2.0  
 <a name="UserModule+createUsers"></a>
 
@@ -67,13 +66,12 @@ Deletes users from the Moodle site.
 Gets the course profiles for users.
 
 **Kind**: instance method of [<code>UserModule</code>](#UserModule)  
-**Returns**: <code>Promise.&lt;GetCourseUserProfilesResponse&gt;</code> - The response returned by
-                                                  Moodle.  
+**Returns**: <code>Promise.&lt;GetCourseUserProfilesResponse&gt;</code> - The response returned by Moodle.  
 **Since**: 0.2.0  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| ...users | <code>Array.&lt;CourseUser&gt;</code> | The users (comprising of user ID and course ID)                             to lookup. |
+| ...users | <code>Array.&lt;CourseUser&gt;</code> | The users (comprising of user ID and course ID) to lookup. |
 
 <a name="UserModule+getPrivateFilesInfo"></a>
 
@@ -86,7 +84,7 @@ Returns general information about files in a user's private files area.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [user] | <code>number</code> | The ID of the user to lookup file info on. If none is provided,                        the ID of the web service user is used. |
+| [user] | <code>number</code> | The ID of the user to lookup file info on. If none is provided, the ID of the web service                        user is used. |
 
 <a name="UserModule+getUserPreferences"></a>
 
@@ -99,8 +97,8 @@ Returns user preferences for a Moodle user.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [name] | <code>string</code> | The name of the preference to lookup. If none is provided, all                        preferences are returned. |
-| [user] | <code>number</code> | The ID of the user to lookup preferences for. If none is provided,                        the ID of the web service user is used. |
+| [name] | <code>string</code> | The name of the preference to lookup. If none is provided, all preferences are returned. |
+| [user] | <code>number</code> | The ID of the user to lookup preferences for. If none is provided, the ID of the web service                        user is used. |
 
 <a name="UserModule+setUserPreferences"></a>
 
@@ -118,7 +116,7 @@ Sets user preferences for Moodle users.
 <a name="UserModule+getUsers"></a>
 
 ### userModule.getUsers(...criteria) ⇒ <code>Promise.&lt;GetUsersResponse&gt;</code>
-Searches for users on the Moodle site that match the provided crtieria.
+Searches for users on the Moodle site that match the provided criteria.
 
 **Kind**: instance method of [<code>UserModule</code>](#UserModule)  
 **Returns**: <code>Promise.&lt;GetUsersResponse&gt;</code> - The response returned by Moodle.  

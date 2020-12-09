@@ -17,8 +17,7 @@ Functions for user grades-related actions.
 ### userModule.getGradeItems(course, [user], [group]) ⇒ <code>Promise.&lt;GetGradeItemsResponse&gt;</code>
 Returns the complete list of grade items for users in a course.
 
-Leaving the `user` and `group` parameters undefined will load the grade
-items for all users in the course.
+Leaving the `user` and `group` parameters undefined will load the grade items for all users in the course.
 
 **Kind**: instance method of [<code>UserModule</code>](#UserModule)  
 **Returns**: <code>Promise.&lt;GetGradeItemsResponse&gt;</code> - The response returned by Moodle.  

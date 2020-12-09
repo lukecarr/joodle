@@ -15,10 +15,9 @@ title: Client
 ## Functions
 
 <dl>
-<dt><a href="#handleResponse">handleResponse(body)</a></dt>
-<dd><p>Attempts to handle a JSON body returned by a call to Moodle&#39;s Web Services API.
-If the body contains an <code>exception</code> property, then the response is assumed to
-be erroneous, and a rejected Promise is returned.</p>
+<dt><a href="#handleResponse">handleResponse(response)</a></dt>
+<dd><p>Attempts to handle a JSON body returned by a call to Moodle&#39;s Web Services API. If the body contains an <code>exception</code>
+property, then the response is assumed to be erroneous, and a rejected Promise is returned.</p>
 </dd>
 </dl>
 
@@ -37,14 +36,13 @@ A client that can send HTTP requests to a Moodle site's Web Services API.
 <a name="new_Client_new"></a>
 
 ### *new Client([options], [httpOptions])*
-Initializes the client as well as the client's `got` instance so HTTP
-requests can be made.
+Initializes the client as well as the client's `got` instance so HTTP requests can be made.
 
 
 | Param | Type | Description |
 | --- | --- | --- |
 | [options] | <code>ClientOptions</code> | The client's configuration options. |
-| [httpOptions] | <code>HttpOptions</code> | HTTP configuration options to pass                                      along to `got`. |
+| [httpOptions] | <code>HttpOptions</code> | HTTP configuration options to pass along to `got`. |
 
 <a name="Client+invoke"></a>
 
@@ -61,15 +59,14 @@ Invokes a Moodle Web Services API function.
 
 <a name="handleResponse"></a>
 
-## handleResponse(body)
-Attempts to handle a JSON body returned by a call to Moodle's Web Services API.
-If the body contains an `exception` property, then the response is assumed to
-be erroneous, and a rejected Promise is returned.
+## handleResponse(response)
+Attempts to handle a JSON body returned by a call to Moodle's Web Services API. If the body contains an `exception`
+property, then the response is assumed to be erroneous, and a rejected Promise is returned.
 
 **Kind**: global function  
 **Since**: 1.0.0  
 
 | Param | Description |
 | --- | --- |
-| body | A JSON body returned by a Moodle API call. |
+| response | The response returned by a Moodle API call. |
 
