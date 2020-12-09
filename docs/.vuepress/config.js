@@ -3,7 +3,7 @@ const { sidebarTree } = require("../reference/config");
 module.exports = {
   title: "Joodle",
   description: "Documentation for Joodle, a Moodle Web Service API client for Node.js.",
-  
+
   themeConfig: {
     nav: [
       {
@@ -38,7 +38,8 @@ module.exports = {
             "initialization",
             "example-usage",
             "configuration",
-            "caching"
+            "caching",
+            "raw-invocation"
           ]
         }
       ],
