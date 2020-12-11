@@ -23,14 +23,10 @@
     "url": "git+https://github.com/lukecarr/joodle.git"
   },
   "scripts": {
-    "jsdoc": "vuepress-jsdoc --source ./../src --dist . --folder reference --title \"API Reference\" -c ./jsdoc.json",
     "dev": "vuepress dev .",
-    "build": "yarn jsdoc && vuepress build ."
+    "build": "vuepress build ."
   },
   "devDependencies": {
-    "jsdoc-babel": "^0.5.0",
-    "jsdoc-to-markdown": "^6.0.1",
-    "vuepress": "^1.7.1",
-    "vuepress-jsdoc": "^3.2.0"
+    "vuepress": "^1.7.1"
   }
 }

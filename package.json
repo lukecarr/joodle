@@ -29,6 +29,7 @@
     "url": "git+https://github.com/lukecarr/joodle.git"
   },
   "scripts": {
+    "jsdoc": "vuepress-jsdoc --source ./src --dist ./docs --folder reference --title \"API Reference\" -c ./jsdoc.json",
     "lint:eslint": "eslint \"src/**\" \"tests/**\"",
     "lint:prettier": "prettier *.md **/*.md *.json **/*.yml",
     "lint:check": "yarn lint:eslint && yarn lint:prettier --check",
@@ -41,7 +42,7 @@
     "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
     "build": "yarn build:clean && yarn build:types && yarn build:js",
     "release": "release-it",
-    "prepublishOnly": "yarn lint:check && yarn test && yarn build"
+    "prepublishOnly": "yarn lint:check && yarn test && yarn build && yarn jsdoc"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.8",
@@ -68,13 +69,16 @@
     "eslint-plugin-prettier": "^3.2.0",
     "husky": "^4.3.5",
     "jest": "^26.6.3",
+    "jsdoc-babel": "^0.5.0",
+    "jsdoc-to-markdown": "^6.0.1",
     "nock": "^13.0.5",
     "prettier": "^2.2.1",
     "release-it": "^14.2.2",
     "rimraf": "^3.0.2",
     "ts-jest": "^26.4.4",
     "ts-node": "^9.1.1",
-    "typescript": "^4.1.2"
+    "typescript": "^4.1.2",
+    "vuepress-jsdoc": "^3.2.0"
   },
   "dependencies": {
     "@babel/runtime": "^7.12.5",

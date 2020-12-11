@@ -1,0 +1,16 @@
+{
+  "plugins": ["node_modules/jsdoc-babel"],
+  "babel": {
+    "extensions": ["ts", "tsx"],
+    "ignore": ["**/*.(test|spec).ts"]
+  },
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false
+  },
+  "recurseDepth": 10,
+  "source": {
+    "includePattern": ".+\\.(js|ts)(doc|x)?$",
+    "excludePattern": ".+\\.(test|spec).ts"
+  }
+}
